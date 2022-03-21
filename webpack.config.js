@@ -13,16 +13,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/env', '@babel/react']
-          }
-        },
+        test: [/\.jsx?$/],
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/env', '@babel/react']
+        }
       }
     ]
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  mode: 'development'
 };
