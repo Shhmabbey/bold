@@ -1,7 +1,7 @@
 class Category < ApplicationRecord
     
-  validates :title, presence: true, index: true
-  validates :category_id, index: true
+  validates :title, presence: true
+  validates :category_id
 
   belongs_to :category,
     foreign_key: :category_id
