@@ -10,7 +10,7 @@ class Api::SessionController < ApplicationController
       login(@user)
       redirect_to root_url
     else
-      render json: ["Invalid username or password"], status: 401
+      render json: ['Invalid username or password'], status: 401
     end
   end
 
