@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :products, only: [:index, :show]
     resources :categories, only: [:index, :show]
     resources :carts, only: [:show, :index] do 
-      # resources :cart_products, only: [:index, :show, :create, :update, :destroy]
+      resources :cart_products, only: [:index, :show, :create, :update, :destroy]
     end
   end
 
