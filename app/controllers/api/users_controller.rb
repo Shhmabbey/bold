@@ -13,15 +13,16 @@ class Api::UsersController < ApplicationController
   def show 
     @user = User.find_by(id: params[:id])
     if @user 
-      render 'api/users/show'
+      render :show
     else 
-      render '/'
+      return nil
     end 
   end 
 
-    private 
-    def user_params
-      params.require(:user).permit(:email, :password, :first_name, :last_name)
-    end 
+  private
+  
+  def user_params
+    params.require(:user).permit(:email, :password, :first_name, :last_name)
+  end 
 
 end
