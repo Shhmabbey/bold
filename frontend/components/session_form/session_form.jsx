@@ -68,7 +68,7 @@ class SessionForm extends React.Component {
       count++;
       if (count === 20) {
         clearInterval(this.loginDemoInterval);
-        this.props.loginDemo();
+        this.props.handleDemoLogin();
       }
     }, 80);
   }
@@ -126,7 +126,8 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form-container">
         <h2>
-          {register ? "Register" : "Sign In" }
+          {/* {register ? "Register" : "Sign In" } */}
+          { formType }
         </h2>
 
         {this.renderErrors()}
