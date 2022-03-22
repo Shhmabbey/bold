@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
   
   def require_logged_in
-    redirect_to root_url unless is_logged_in?
+    render 'static_pages/root' unless logged_in?
   end
 
   def login(user)
