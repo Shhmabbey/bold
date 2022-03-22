@@ -4,15 +4,18 @@ import {
   CLEAR_SESSION_ERRORS
 } from '../actions/session_actions';
 
-export default (state = [], action) => {
+const _nullSessionErrors = [];
+
+export default (state = _nullSessionErrors, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
-      return ( action.errors ? action.errors : [] );
+      if (action.errors) return action.errors;
+      return _nullSessionErrors;
     case RECEIVE_CURRENT_USER:
-      return [];
+      return _nullSessionErrors;
     case CLEAR_SESSION_ERRORS:
-      return [];
+      return _nullSessionErrors;
     default:
       return state;
   }
