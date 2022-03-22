@@ -130,7 +130,7 @@ class SessionForm extends React.Component {
           { formType }
         </h2>
 
-        {this.renderErrors()}
+        { this.renderErrors() }
 
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <div className="session-form">
@@ -153,7 +153,7 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            {this.registrationForm()}
+            { this.registrationForm() }
             <br/>
             <input 
               className="session-submit"
