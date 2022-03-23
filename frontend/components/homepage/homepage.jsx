@@ -27,7 +27,7 @@ class Homepage extends React.Component {
         }
         {/* // TO DO: route to carts */}
         <a href="/" className="header-link">
-          <img src="https://italic.com/static/icons/empty-cart.svg" alt="cart"/>
+          <img src="https://italic.com/static/icons/empty-cart.svg" alt="cart" className='header-link-cart'/>
         </a>
       </div>
     )
