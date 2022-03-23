@@ -13,9 +13,11 @@ class Homepage extends React.Component {
     return (
       <div className="header-container">
         {currentUser ? (
-          <Link to="/account" className="header-link" > My Account </Link>
+          <Link to="/" className="header-link" > My Account </Link>
+          // <Link to="/logout" className="header-link" > Log Out </Link>
         ) : (
-          <Link to ="/login" className="header-link" > Login </Link> )}
+          <Link to ="/login" className="header-link" > Sign In </Link> )
+        }
       </div>
     )
   }

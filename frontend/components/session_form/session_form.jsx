@@ -59,6 +59,7 @@ class SessionForm extends React.Component {
     });
     const email = "demo@email.com";
     const password = "password"
+
     let count = 0;
     this.loginDemoInterval = setInterval(() => {
       this.setState({
@@ -66,6 +67,7 @@ class SessionForm extends React.Component {
         password: count < password.length ? (this.state.password.concat(password[count])) : password,
       });
       count++;
+      
       if (count === 20) {
         clearInterval(this.loginDemoInterval);
         this.props.handleDemoLogin();
@@ -78,17 +80,17 @@ class SessionForm extends React.Component {
       (this.props.formType === "Signup") ? (
         null
       ) : (
-        <a
-          className="demo-login-button"
+        <button
+          className="demo-login"
           onClick={
             (e) => {
-            e.preventDefault();
-            this.handleDemoLogin();
+              e.preventDefault();
+              this.handleDemoLogin();
             }
           }
         >
-          Login as Demo User
-        </a>
+          Demo a User Login
+        </button>
       )
     )
   }
@@ -97,7 +99,7 @@ class SessionForm extends React.Component {
     return (
       this.props.formType === "Signup" ? (
         <div>
-          <label>First Name:
+          <label>First Name
             <input
               type="text"
               value={this.state.first_name}
@@ -106,7 +108,7 @@ class SessionForm extends React.Component {
             />
           </label>
           <br/>
-          <label>Last Name:
+          <label>Last Name
             <input
               type="text"
               value={this.state.last_name}
@@ -125,9 +127,9 @@ class SessionForm extends React.Component {
     
     return (
       <div className="session-form-container">
+        <h3>Login or Register</h3>
         <h2>
-          {/* {register ? "Register" : "Sign In" } */}
-          { formType }
+          { register ? 'Create your account' : 'Welcome To Bold' }
         </h2>
 
         { this.renderErrors() }
@@ -135,7 +137,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <div className="session-form">
             <br/>
-            <label>Email:
+            <label>Email
               <input 
                 type="text"
                 value={this.state.email}
@@ -144,7 +146,7 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <label>Password:
+            <label>Password
               <input 
                 type="password"
                 value={this.state.password}
@@ -158,7 +160,7 @@ class SessionForm extends React.Component {
             <input 
               className="session-submit"
               type="submit"
-              value={ formType }
+              value="Continue"
             />
           </div>
           { this.demoLoginButton() }
@@ -167,7 +169,7 @@ class SessionForm extends React.Component {
           to={ register ? "/login" : "/signup" }
           className="switch-form-link"
         >
-          { "Register" }
+          { register ? "Sign In" : "Register"}
         </Link>
       </div>
     );
