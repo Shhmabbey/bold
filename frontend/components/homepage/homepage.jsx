@@ -18,10 +18,11 @@ class Homepage extends React.Component {
         </a>
         <Search/>
         {currentUser ? (
-          <Link to="/" className="header-link" >
-            { currentUser.first_name[0] }
-          </Link>
-          // <Link to="/logout" className="header-link" > Log Out </Link>
+          // <Link to="/" className="header-link" >
+          //   { currentUser.first_name[0] }
+          // </Link>
+          // <button onClick={this.props.logout}> Log out </button>
+          <a className="header-link" onClick={this.props.logout} > Log Out </a>
         ) : (
           <Link to ="/login" className="header-link" > Sign In </Link> )
         }

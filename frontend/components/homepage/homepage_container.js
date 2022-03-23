@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Homepage from './homepage';
+import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = ({ entities, session }) => {
   return {
@@ -7,6 +8,12 @@ const mapStateToProps = ({ entities, session }) => {
   };
 };
 
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout()),
+  // openModal: modal => dispatch(openModal(modal))
+});
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Homepage);
