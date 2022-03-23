@@ -56,6 +56,8 @@ class SessionForm extends React.Component {
     this.setState({
       email: "",
       password: "",
+      first_name: "Demo",
+      last_name: "User"
     });
     const email = "demo@email.com";
     const password = "password"
