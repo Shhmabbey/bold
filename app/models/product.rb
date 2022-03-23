@@ -5,5 +5,5 @@ class Product < ApplicationRecord
     validates :stock, numericality: { greater_than_or_equal_to: 0 }
 
     belongs_to :category
-
+    has_one_attached :photo
 end
