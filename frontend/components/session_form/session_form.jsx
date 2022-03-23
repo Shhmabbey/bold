@@ -88,7 +88,7 @@ class SessionForm extends React.Component {
             }
           }
         >
-          Demo a User Login
+          Guest Account
         </button>
       )
     )
@@ -168,7 +168,7 @@ class SessionForm extends React.Component {
           to={ register ? "/login" : "/signup" }
           className="switch-form-link"
         >
-          { register ? "Sign In" : "Register"}
+          {register ? "Sign In" : "Don't have an account? Sign Up"}
         </Link>
       </div>
     );
