@@ -70,7 +70,6 @@ class SessionForm extends React.Component {
       
       if (count === 20) {
         clearInterval(this.loginDemoInterval);
-        this.props.handleDemoLogin();
       }
     }, 80);
   }
