@@ -3,12 +3,13 @@ import ProductIndex from './product_index';
 import { fetchAllProducts, fetchProduct } from '../../../actions/product_actions'
 
 const mapStateToProps = (state, ownProps) => ({
-  products: Object.values(state.entities.product),
-  path: ownProps.match.path
+  currentUser: state.entities.users[state.session.id],
+  products: Object.values(state.entities.products),
+  categoryId: ownProps.match.params.categoryId
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchAllProducts: () => dispatch(fetchAllProducts()),
+  fetchAllProducts: (categoryId) => dispatch(fetchAllProducts(categoryId)),
   fetchProduct: (id) => dispatch(fetchProduct(id)),
 });
 

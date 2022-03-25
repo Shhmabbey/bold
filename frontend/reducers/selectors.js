@@ -1,4 +1,4 @@
-export const selectProduct = ({ products, reviews }, id) => {
+export const selectProduct = ({ products, reviews = [] }, id) => {
   if (products[id]) {
     const product = products[id];
     product.reviews = product.reviewIds.map(id => reviews[id]);

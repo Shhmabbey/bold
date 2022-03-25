@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from 'react-router'
+import { Route, Switch, Redirect } from 'react-router'
 import { AuthRoute } from '../util/route_util';
 
 import HomepageContainer from "./homepage/homepage_container";
@@ -13,10 +13,13 @@ const App = () => (
     <header>
       <Route path="/" component={HomepageContainer} />
     </header>
-    {/* <Route path="/products/" component={ProductsIndexContainer} /> */}
-    <Route path="/products/:id" component={ProductsContainer} />
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
+    <Switch>
+      <Route path="/products/:id" component={ProductsContainer} />
+      <Route excat path="/products/" component={ProductsIndexContainer} />
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <Redirect to='/' />
+    </Switch>
   </div>
 );
 
