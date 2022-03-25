@@ -6,9 +6,11 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show] do
       resources :carts, only: [:show, :index, :create]
     end
+    
     resources :products, only: [:index, :show] do
       resources :reviews, only: [:index, :create, :update, :destroy]
     end
+    
     resources :categories, only: [:index, :show]
     resources :carts, only: [:show, :index] do 
       resources :cart_products, only: [:index, :show, :create, :update, :destroy]

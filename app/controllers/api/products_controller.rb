@@ -1,12 +1,13 @@
 class Api::ProductsController < ApplicationController
 
   def index
-    @items = Item.all
+    @products = Product.all
     render :index
   end
   
   def show
-    @item = Item.find(params[:id])
+    # @product = Product.find(params[:id])
+    @product = Product.with_attached_photos.find(params[:id])
     render :show
   end
 
