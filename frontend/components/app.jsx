@@ -13,7 +13,7 @@ const App = () => (
     <header>
       <Route path="/" component={HomepageContainer} />
     </header>
-    <Route path="/products/" component={ProductsIndexContainer} />
+    {/* <Route path="/products/" component={ProductsIndexContainer} /> */}
     <Route path="/products/:id" component={ProductsContainer} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
