@@ -12,16 +12,17 @@ const receiveAllProducts = (products) => ({
   type: RECEIVE_ALL_PRODUCTS,
   products
 })
-const receiveProduct = ({ product, reviews }) => ({
+const receiveProduct = ({ product, reviews = [] }) => ({
   type: RECEIVE_PRODUCT,
   product,
   reviews
 })
 
-export const fetchAllProducts = (category = 'Pets') => (dispatch) => {
-  return ProductsUtil.fetchAllProducts(category)
+export const fetchAllProducts = (categoryId = 1) => (dispatch) => {
+  return ProductsUtil.fetchAllProducts(categoryId)
     .then(products => dispatch(receiveAllProducts(products)))
 }
+
 export const fetchProduct = (id) => (dispatch) => {
   return ProductsUtil.fetchProduct(id)
     .then(product => dispatch(receiveProduct(product)))
