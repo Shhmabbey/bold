@@ -11,27 +11,33 @@ class Homepage extends React.Component {
     super(props)
   }
 
+  navigation_bar(currentUser) {
+    return(
+      <div className="Header_Container_Items">
+        <Link to="/" className="Header_Link logo home">
+          <img src="https://italic.com/static/icons/logo.svg" alt="logo" />
+        </Link>
+        <Search />
+        {currentUser ? (
+          <Link to="/" className="Header_Link" onClick={this.props.logout} > Log Out </Link>
+        ) : (
+          <Link to="/login" className="Header_Link" > Sign In </Link>)
+        }
+        {/* // TO DO: route to carts */}
+        <Link to="/" className="Header_Link User_Cart" >
+          <img src="https://italic.com/static/icons/empty-cart.svg" alt="cart" className='Header_Link_Cart' />
+        </Link>
+      </div>
+    )
+  }
+
   render() {
     const { currentUser } = this.props;
     return (
       <div>
         <Banner />
-        <div className="header-container">
-          <div className="header_container_items">
-            <a href="/" className="header-link">
-              <img src="https://italic.com/static/icons/logo.svg" alt="logo" />
-            </a>
-            <Search />
-            {currentUser ? (
-              <a className="header-link" onClick={this.props.logout} > Log Out </a>
-            ) : (
-              <Link to="/login" className="header-link" > Sign In </Link>)
-            }
-            {/* // TO DO: route to carts */}
-            <a href="/" className="header-link">
-              <img src="https://italic.com/static/icons/empty-cart.svg" alt="cart" className='header-link-cart' />
-            </a>
-          </div>
+        <div className="Header_Container">
+          { this.navigation_bar(currentUser)}
           <ProductCategories/>
         </div>
       </div>
