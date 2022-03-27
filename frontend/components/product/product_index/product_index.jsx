@@ -15,11 +15,11 @@ class ProductIndex extends React.Component {
   render() {
     const products = this.props.products;
     return (
-      <div>
+      <div className="Products_Container">
           {
             products?.map((product) => {
               return (
-                <div key={product.id}>
+                <div key={product.id} className="product-cards-grid" >
                   <Link to={`/products/${product.id}`} className="Product_Image" >
                     <img src={product.default_photo_url} alt=""/>
                   </Link>

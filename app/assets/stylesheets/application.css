@@ -23,137 +23,8 @@ element.style {
   height: 40px;
 }
 
-.search {
-  width: 100%;
-  margin-left: 20px;
-  margin-right: 20px;
-  display: flex;
-  background-color: white;
-  padding: 13px 20px;
-  height: 40px;
-  align-items: center;
-  flex: 1 1 0%;
-  position: relative;
-  box-sizing: border-box;
-  font-size: 12px;
-  line-height: 12px;
-  width: fit-content;
-}
-
-/* .search svg {
-  right: 13px;
-  position: absolute;
-  vertical-align: middle;
-  box-sizing: border-box;
-} */
-
-#search {
-  background-color: white;
-  width: 100%;
-  padding: 13px 20px;
-  height: 40px;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  transition-duration: .15s;
-  --tw-text-opacity: 1;
-  color: rgba(85, 85, 85, var(--tw-text-opacity));
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  --tw-border-opacity: 1;
-  border-color: rgba(245, 245, 245, var(--tw-border-opacity));
-  border-width: 1px;
-  border-radius: 30px;
-  appearance: none;
-  background: #fff;
-  box-shadow: none;
-  background-color: white;
-}
-
 div {
   box-sizing: border-box;
-}
-
-.header-container {
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-  padding-top: 10px;
-  box-sizing: border-box;
-  padding-bottom: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
-  --tw-border-opacity: 1;
-  border-color: rgba(234, 234, 234, var(--tw-border-opacity));
-  border-bottom-width: 1px;
-}
-
-.header_container_items {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  --tw-border-opacity: 1;
-  border-color: rgba(234, 234, 234, var(--tw-border-opacity));
-  --tw-border-opacity: 1;
-  border-color: rgba(234, 234, 234, var(--tw-border-opacity));
-  border-bottom-width: 1px;
-  align-items: center;
-  height: 60px;
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  font-size: 14px;
-
-  -webkit-box-align: stretch;
-  align-items: stretch;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  position: relative;
-
-}
-
-.banner {
-  background-color: rgb(250, 245, 235);
-  --tw-border-opacity: 1;
-  border-color: rgba(234, 234, 234, var(--tw-border-opacity));
-  border-bottom-width: 1px;
-  align-items: center;
-  height: 40px;
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  font-size: 14px;
-
-  -webkit-box-align: stretch;
-  align-items: stretch;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  position: relative;
-}
-
-.banner img {
-  height: 40px;
-  max-width: 100%;
-  max-width: 100%;
-}
-
-.header-link {
-  margin-right: 20px;
-  padding: 0;
-  line-height: inherit;
-  color: inherit;
-  background-color: transparent;
-  background-image: none;
-  border: 0 solid;
-  text-indent: 0px;
-  text-shadow: none;
-  display: flex;
-  text-align: center;
-  align-items: flex-start;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-indent: 0px;
-  text-shadow: none;
 }
 
 .button,
@@ -182,11 +53,6 @@ button,
   line-height: 1;
 }
 
-a.header-link img:hover {
-  color: rgba(24, 48, 56);
-}
-
-
 a.button:hover,
 button:hover,
 [type=submit]:hover,
@@ -196,9 +62,6 @@ button:hover,
   text-decoration: none;
 }
 
-.Product_Image img {
-  height: 500px
-}
 
 /*! 
  * Primitive UI | MIT License

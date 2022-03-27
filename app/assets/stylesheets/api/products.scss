@@ -1,3 +1,30 @@
 // Place all the styles related to the Api::products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.Products_Container {
+  flex: 1 1 0%;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0 solid;
+  line-height: inherit;
+}
+
+.product-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 2px;
+}
+
+.product-card {
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: block;
+}
+
+.Product_Image img {
+  height: 500px
+}

@@ -2,6 +2,7 @@ json.product do
   json.partial! "api/products/product", product: @product
   json.reviewIds @product.reviews.pluck(:id)
   json.photoUrls @product.photos.map { |file| url_for(file) }
+  # json.category @product.category
 end
 
 json.reviews do
