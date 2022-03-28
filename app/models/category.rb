@@ -2,14 +2,9 @@ class Category < ApplicationRecord
     
   validates :title, presence: true
 
-  belongs_to :category,
-    foreign_key: :category_id,
-    optional: true
+  has_many :sub_categories, :class_name => "Category", :foreign_key => "parent_category_id", :dependent => :destroy
+  belongs_to :parent_category, :class_name => "Category", :optional => true
 
-  has_many :categories,
-    foreign_key: :category_id,
-    optional: true
-
-  has_many :products
+  has_many :products 
 
 end

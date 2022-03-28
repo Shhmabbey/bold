@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Search from './seach_bar/search_bar'
 import Banner from './banner/banner';
-import ProductCategories from './product_categories/product_categories';
+import ProductCategoryLinks from './product_categories/product_categories';
 
 
 
@@ -11,10 +11,14 @@ class Homepage extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.fetchAllCategories()
+  }
+
   navigation_bar(currentUser) {
     return(
       <div className="Header_Container_Items">
-        <Link to="/" className="Header_Link logo home">
+        <Link to="/" className="Header_Link Logo home">
           <img src="https://italic.com/static/icons/logo.svg" alt="logo" />
         </Link>
         <Search />
@@ -31,6 +35,26 @@ class Homepage extends React.Component {
     )
   }
 
+  product_category_links() {
+    const categories = this.props.categories;
+    return (
+      <div className="Product_Categories_Container">
+        <div className="Product_Categories" >
+          {
+            categories?.map((category) => {
+              return (
+                <ProductCategoryLinks key={category.id} category={category} />
+              )
+            })
+          }
+          <Link to={`/products/`} className={`Product_Categories_Link`} >
+            All Products
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
   render() {
     const { currentUser } = this.props;
     return (
@@ -38,7 +62,7 @@ class Homepage extends React.Component {
         <Banner />
         <div className="Header_Container">
           { this.navigation_bar(currentUser)}
-          <ProductCategories/>
+          { this.product_category_links() }
         </div>
       </div>
     )
