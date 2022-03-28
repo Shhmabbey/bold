@@ -1,0 +1,50 @@
+.Product_Categories_Container {
+  justify-content: center;
+  background-color: #fff;
+  font-size: 12px;
+  line-height: 12px;
+  padding-left: 100px;
+  padding-right: 100px;
+  // max-width: 1440px;
+  width: 100%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  box-sizing: border-box;
+  font-weight: 500;
+  height: 40px;
+  border-top: .01px solid #cdcdd4;
+
+  font-family: Inter, Graphik, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+
+  .Product_Categories {
+    padding-top: 14px;
+    display: flex;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+
+    .Product_Categories_Link {
+      font-weight: 400;
+      padding-bottom: 12px;
+      cursor: pointer;
+      margin-right: 30px;
+      display: block;
+      font-size: 12px;
+      line-height: 12px;
+      white-space: nowrap;
+      --tw-text-opacity: 1;
+      color: rgba(85, 85, 85, var(--tw-text-opacity));
+
+      &:hover {
+        border-bottom: 1.85px solid rgb(0, 0, 0);
+        font-weight: 600;
+        color: #000000;
+        margin-right: 29.5px;
+      }
+    }
+  }
+}

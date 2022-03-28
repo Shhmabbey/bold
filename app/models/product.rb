@@ -5,8 +5,8 @@ class Product < ApplicationRecord
   validates :stock, numericality: { greater_than_or_equal_to: 0 }
   
   belongs_to :category,
-  foreign_key: :category_id,
-  optional: true
+  primary_key: :id,
+  foreign_key: :category_id
   
   has_many :reviews
   

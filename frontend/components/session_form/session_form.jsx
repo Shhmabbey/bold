@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
           null
         ) : (
           errors.map((error, i) => (
-          <li key={`error-${i}`}>
+            <li key={`error-${i}`} className="error">
             {error}
           </li>
           ))
@@ -100,21 +100,23 @@ class SessionForm extends React.Component {
     return (
       this.props.formType === "Signup" ? (
         <div>
-          <label>First Name
+          <p className="Session_Form_Label" >First Name</p>
+          <label htmlFor="first-name" >
             <input
               type="text"
               value={this.state.first_name}
               onChange={this.update("first_name")}
-              className="session-input"
+              className="Session_Form_Input"
             />
           </label>
           <br/>
-          <label>Last Name
+          <p className="Session_Form_Label" >Last Name</p>
+          <label htmlFor="last-name" >
             <input
               type="text"
               value={this.state.last_name}
               onChange={this.update("last_name")}
-              className="session-input"
+              className="Session_Form_Input"
             />
           </label>
         </div>
@@ -128,50 +130,54 @@ class SessionForm extends React.Component {
     
     return (
       <div className="session-form-container">
-        <h3>Login or Register</h3>
-        <h2>
-          { register ? 'Create your account' : 'Welcome To Bold' }
-        </h2>
-
-        { this.renderErrors() }
-
-        <form onSubmit={this.handleSubmit} className="session-form-box">
-          <div className="session-form">
-            <br/>
-            <label>Email
-              <input 
-                type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="session-input"
-              />
-            </label>
-            <br/>
-            <label>Password
-              <input 
+        <div>
+          <p className="Login_Header">Login or Register</p>
+        </div>
+        <div>
+          <p className="Login_Header_Greeting">
+            { register ? 'Create your account' : 'Welcome To Bold' }
+          </p>
+          <form onSubmit={this.handleSubmit} className="Session_Form_Box">
+            <div className="session-form">
+              <br/>
+              <p className="Session_Form_Label">Email</p>
+              <label htmlFor="email" ></label>
+                <input 
+                  id="email"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className="Session_Form_Input"
+                  />
+              <br/>
+              <p className="Session_Form_Label">Password</p>
+              <label htmlFor="password"></label>
+              <input
+                id="password"
                 type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="session-input"
+                className="Session_Form_Input"
               />
-            </label>
-            <br/>
-            { this.registrationForm() }
-            <br/>
-            <input 
-              className="session-submit"
-              type="submit"
-              value="Continue"
-            />
-          </div>
-          { this.demoLoginButton() }
-        </form>
-        <Link
-          to={ register ? "/login" : "/signup" }
-          className="switch-form-link"
-        >
-          {register ? "Sign In" : "Don't have an account? Sign Up"}
-        </Link>
+              { this.renderErrors() }
+              <br/>
+              { this.registrationForm() }
+              <br/>
+              <input 
+                className="session-submit"
+                type="submit"
+                value="Continue"
+                />
+            </div>
+            { this.demoLoginButton() }
+          </form>
+          <Link
+            to={ register ? "/login" : "/signup" }
+            className="switch-form-link"
+          >
+            {register ? "Sign In" : "Don't have an account? Sign Up"}
+          </Link>
+        </div>
       </div>
     );
   }
