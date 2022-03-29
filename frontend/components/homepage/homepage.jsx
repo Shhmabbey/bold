@@ -4,8 +4,6 @@ import Search from './seach_bar/search_bar'
 import Banner from './banner/banner';
 import ProductCategoryLinks from './product_categories/product_categories';
 
-
-
 class Homepage extends React.Component {
   constructor(props) {
     super(props)

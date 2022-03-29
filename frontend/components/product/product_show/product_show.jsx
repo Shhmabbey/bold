@@ -1,21 +1,12 @@
 import React from 'react';
 import ProductDetail from './product_detail';
-import ReviewFormContainer from './review_form_container';
+import ReviewFormContainer from './reviews/review_form_container';
 import { ReviewLink } from '../../../util/link_util';
-import { Link } from 'react-router-dom';
 import { ProtectedRoute } from '../../../util/route_util';
 
-class DisplayProduct extends React.Component {
+class ProductShow extends React.Component {
   constructor(props) {
     super(props)
-    // this.state = {
-    //   title: "",
-    //   description: "",
-    //   price: "",
-    //   stock: "",
-    //   category_id: "",
-    //   default_photo_url: ""
-    // }
   }
 
   componentDidMount() {
@@ -23,30 +14,48 @@ class DisplayProduct extends React.Component {
   }  
 
   render(){
-    const product = this.props.product
-    
-    if (!this.props.product) {
+    if (!this.props.product || !this.props.reviews) {
       return null
     }
+
+    const product = this.props.product
+    const reviews = Object.values(this.props.reviews)
 
     return (
       <div className="single-product-show">
         <div className="right-half product-details">
           <ProductDetail product={product} />
-          <ReviewLink
-            component={ReviewFormContainer}
-            to={`/products/${product.id}/review`}
-            label="Leave a Review"
-          />
-          <ProtectedRoute
-            path="/products/:productId/review"
-            component={ReviewFormContainer}
-          />
+          <div className="reviews">
+            <p>Reviews</p>
+            {/* <ReviewLink
+              component={ReviewFormContainer}
+              to={`/products/${product.id}/review`}
+              label="Leave a Review"
+            /> */}
+            {/* <ProtectedRoute
+              path={`/products/${product.id}/review`}
+              component={ReviewFormContainer}
+            /> */}
+            <br/>
+            {
+              reviews?.map((review) => {
+                return (
+                  <div key={review.id}>
+                    <ul>
+                      <li>Rating: {review.rating}</li>
+                      <li>{review.helpful}</li>
+                      <li>{review.title}</li>
+                      <li>{review.body}</li>
+                    </ul>
+                  </div>
+                )
+              })
+            }
+          </div>
         </div>
       </div>
     );
   }
-    
 }
 
-export default DisplayProduct;
+export default ProductShow;

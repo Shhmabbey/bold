@@ -6,14 +6,14 @@ import { fetchAllCategories } from '../../actions/category_actions';
 const mapStateToProps = ({ entities, session }) => {
   return {
     currentUser: entities.users[session.id],
-    categories: Object.values(entities.categories)
+    categories: Object.values(entities.categories),
   };
 };
 
+
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  fetchAllCategories: () => dispatch(fetchAllCategories())
-  // openModal: modal => dispatch(openModal(modal))
+  fetchAllCategories: () => dispatch(fetchAllCategories()),
 });
 
 export default connect(

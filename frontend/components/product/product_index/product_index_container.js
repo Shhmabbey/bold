@@ -4,13 +4,14 @@ import { fetchAllProducts, fetchProduct } from '../../../actions/product_actions
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.id],
+  categories: Object.values(state.entities.categories),
   products: Object.values(state.entities.products),
   categoryId: ownProps.match.params.categoryId
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchAllProducts: (categoryId) => dispatch(fetchAllProducts(categoryId)),
-  fetchProduct: (id) => dispatch(fetchProduct(id)),
+  fetchAllProducts: () => dispatch(fetchAllProducts()),
+  // fetchProduct: (productId) => dispatch(fetchProduct(productId)),
 });
 
 export default connect(

@@ -5,7 +5,6 @@
   line-height: 12px;
   padding-left: 100px;
   padding-right: 100px;
-  // max-width: 1440px;
   width: 100%;
   display: flex;
   margin-right: auto;
@@ -26,25 +25,37 @@
     font-size: 12px;
     line-height: 12px;
     font-weight: 500;
+    max-width: 1440px;
 
     .Product_Categories_Link {
       font-weight: 400;
-      padding-bottom: 12px;
       cursor: pointer;
-      margin-right: 30px;
-      display: block;
       font-size: 12px;
       line-height: 12px;
       white-space: nowrap;
+      margin-right: 30px;
+      display: block;
       --tw-text-opacity: 1;
       color: rgba(85, 85, 85, var(--tw-text-opacity));
 
-      &:hover {
-        border-bottom: 1.85px solid rgb(0, 0, 0);
-        font-weight: 600;
-        color: #000000;
-        margin-right: 29.5px;
+      &:after {
+        content: "";
+        display: block;
+        transform: scale(0);
+        margin-bottom: -2px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #171722;
+        transition: 0.2s ease-in-out;
       }
+
+      &:hover:after {
+        content: "";
+        color: #171722;
+        display: block;
+        transform: scale(1);
+        transition: 0.2s ease-in;
+      }
+
     }
   }
 }

@@ -9,11 +9,12 @@ class ProductIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllProducts(this.props.match.params.id)
+    this.props.fetchAllProducts()
   }
 
   render() {
     const products = this.props.products;
+    console.log("PRODUCTS", products)
     return (
       <div className="Products_Container">
           {
@@ -21,7 +22,7 @@ class ProductIndex extends React.Component {
               return (
                 <div key={product.id} className="product-cards-grid" >
                   <Link to={`/products/${product.id}`} className="Product_Image" >
-                    <img src={product.default_photo_url} alt=""/>
+                    <img src={product.default_photo_url} alt="Product Default Image"/>
                   </Link>
                   <br/>
                   <div className='product_index_container'>

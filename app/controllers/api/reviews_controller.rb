@@ -6,6 +6,11 @@ class Api::ReviewsController < ApplicationController
     @reviews = Review.all
     render 'api/products/show'
   end
+
+  def index
+    @review = Review.find(params[:id])
+    render 'api/products/show'
+  end
   
   def create
     @review = Review.new(review_params)
