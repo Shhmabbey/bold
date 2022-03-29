@@ -1,0 +1,319 @@
+// Place all the styles related to the Api::products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.Products_Card_Map_container {
+  margin-left: 22%;
+  margin-right: 22%;
+  flex: 1 1 0%;
+  min-width: 250px;
+  box-sizing: border-box;
+  display: block;
+  font-family: Inter, Graphik, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  color: #171722;
+
+  .Products_Card_Map {
+    padding-bottom: 10px;
+    margin-top: 10px;
+    height: 100%;
+    box-sizing: border-box;
+
+    .Products_Cards_Grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-row-gap: 20px;
+      grid-column-gap: 2px;
+      box-sizing: border-box;
+
+      .Product_Cards {
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+
+      .Product_Index_Card_Outter {
+        overflow: hidden;
+        padding: 10px;
+        border-radius: 13px;
+        box-sizing: border-box;
+        display: block;
+
+        .Product_Index_Card_Inner {
+          border-radius: 10px;
+          --tw-text-opacity: 1;
+          color: rgba(85, 85, 85, var(--tw-text-opacity));
+          cursor: pointer;
+          box-sizing: border-box;
+          display: block;
+          -webkit-font-smoothing: antialiased;
+          background-color: #fff;
+          -webkit-text-size-adjust: 100%;
+
+          .Product_Image_Primary {
+
+            .Product_Image_Seconday {
+              border-radius: 3px;
+              // position: relative;
+              // box-sizing: border-box;
+              // --tw-text-opacity: 1;
+              // color: rgba(85, 85, 85, var(--tw-text-opacity));
+
+              .Product_Default_Image_Container {
+                --tw-aspect-h: 1;
+                --tw-aspect-w: 1;
+                position: relative;
+                padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+                // box-sizing: border-box;
+                display: block;
+                // overflow: hidden;
+                width: initial;
+                height: initial;
+                // background: none;
+                // opacity: 1;
+                // border: 0px;
+                margin: 0px;
+                // padding: 0px;
+                // position: absolute;
+                // inset: 0px;
+
+                .Product_Default_Image {
+                  margin-top: 0px;
+                  position: absolute;
+                  inset: 0px;
+                  box-sizing: border-box;
+                  padding: 0px;
+                  border: none;
+                  margin: auto;
+                  display: block;
+                  --tw-aspect-h: 1;
+                  --tw-aspect-w: 1;
+                  // height: auto;
+                  // max-width: 250px;
+                  min-width: 100%;
+                  max-width: 100%;
+                  min-height: 100%;
+                  max-height: 100%;
+                  filter: none;
+                  background-size: cover;
+                  background-image: none;
+                  background-position: 0% 0%;
+                  border-radius: 3px;
+                  // z-index: 150;
+                }
+              }
+            }
+
+
+          }
+
+          .Product_Index_Card_Information_Skeleton {
+            padding: 0;
+            margin-top: 10px;
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+            --tw-text-opacity: 1;
+            color: rgba(85, 85, 85, var(--tw-text-opacity));
+
+            .Product_Index_Card_Information {
+              --tw-text-opacity: 1;
+              color: rgba(85, 85, 85, var(--tw-text-opacity));
+
+              .Product_Index_Card_Details {
+                text-align: center;
+                font-size: 12px;
+                line-height: 12px;
+                align-items: center;
+                flex-wrap: wrap;
+                display: flex;
+                box-sizing: border-box;
+                --tw-text-opacity: 1;
+                color: rgba(85, 85, 85, var(--tw-text-opacity));
+
+                .Product_Index_Card_Rating {
+                  align-items: center;
+                  box-sizing: border-box;
+                  font-size: 12px;
+                  line-height: 12px;
+                  --tw-text-opacity: 1;
+                  color: rgba(85, 85, 85, var(--tw-text-opacity));
+
+                  .Product_Index_Card_Review_Components {
+                    display: flex;
+                    // .One {
+                    //   box-sizing: border-box;
+                    //   // display: inline-block;
+                    // overflow: hidden;
+                    //   width: initial;
+                    //   height: initial;
+                    //   background: none;
+                    //   opacity: 1;
+                    //   border: 0px;
+                    //   margin: 0px;
+                    //   padding: 0px;
+                    //   position: relative;
+                    //   max-width: 100%;
+                    //   font-size: 12px;
+                    //   line-height: 12px;
+                    //   --tw-text-opacity: 1;
+                    //   color: rgba(85, 85, 85, var(--tw-text-opacity));
+
+                    //   .two {
+                    //     box-sizing: border-box;
+                    //     display: block;
+                    //     width: initial;
+                    //     height: initial;
+                    //     background: none;
+                    //     opacity: 1;
+                    //     border: 0px;
+                    //     margin: 0px;
+                    //     padding: 0px;
+                    //     max-width: 100%;
+                    //     font-size: 12px;
+                    //     line-height: 12px;
+
+
+                    img {
+                      display: flex;
+                      flex: 1;
+                      width: 10px;
+                      height: 10px;
+                      // // background: none;
+                      // opacity: 1;
+                      // border: 0px;
+                      // margin: 0px;
+                      // padding: 0px;
+                      vertical-align: middle;
+                      // box-sizing: border-box;
+                      // padding-right: 10px;
+
+                    }
+
+                    //   }
+                    // }
+
+
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 12px;
+  line-height: 12px;
+  margin: 0;
+
+  .Review_Average {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    display: flex;
+    flex: 1;
+    box-sizing: border-box;
+    --tw-text-opacity: 1;
+    color: rgba(85, 85, 85, var(--tw-text-opacity));
+    margin-right: 4px;
+  }
+
+  .Review_count {
+    display: flex;
+    flex: 1;
+    --tw-text-opacity: 1;
+    color: rgba(197, 197, 197, var(--tw-text-opacity));
+  }
+}
+
+.Manufacturer_Box {
+  align-items: center;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+  display: block;
+  --tw-text-opacity: 1;
+  color: rgba(85, 85, 85, var(--tw-text-opacity));
+  font-family: Inter, Graphik, sans-serif;
+
+}
+
+.Manufacturer {
+  font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 0.5rem;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.Brand {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+  margin-bottom: 0.5rem;
+  font-size: 10px;
+  line-height: 10px;
+  --tw-bg-opacity: 1;
+  background-color: rgba(247, 247, 247, var(--tw-bg-opacity)) !important;
+  border-radius: 0.125rem;
+  display: inline-block;
+  margin-right: 0.25rem;
+  box-sizing: border-box;
+  --tw-text-opacity: 1;
+  color: rgba(85, 85, 85, var(--tw-text-opacity));
+}
+
+.Index_Card_Price {
+  --tw-text-opacity: 1;
+  color: rgba(23, 23, 34, var(--tw-text-opacity));
+  box-sizing: border-box;
+  display: block;
+  font-weight: 600;
+  margin-right: 10px;
+
+  div {
+    --tw-text-opacity: 1;
+    color: rgba(85, 85, 85, var(--tw-text-opacity));
+    line-height: 1rem;
+    font-size: 12px;
+    vertical-align: text-top;
+    align-self: center;
+    top: 0.125rem;
+    position: relative;
+  }
+}
+
+div #Product_Index_Card_Title {
+  --tw-text-opacity: 1;
+  color: rgba(23, 23, 34, var(--tw-text-opacity));
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin: 0;
+  box-sizing: border-box;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  display: block;
+  height: 30px;
+  // font-family: Inter, Graphik, sans-serif;
+}

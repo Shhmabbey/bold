@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProductDetail from '../product_show/product_detail';
+import ProductIndexCard from './product_index_card';
 
 class ProductIndex extends React.Component {
 
@@ -14,25 +15,24 @@ class ProductIndex extends React.Component {
 
   render() {
     const products = this.props.products;
-    console.log("PRODUCTS", products)
+    
     return (
-      <div className="Products_Container">
-          {
-            products?.map((product) => {
-              return (
-                <div key={product.id} className="product-cards-grid" >
-                  <Link to={`/products/${product.id}`} className="Product_Image" >
-                    <img src={product.default_photo_url} alt="Product Default Image"/>
-                  </Link>
-                  <br/>
-                  <div className='product_index_container'>
-                    <ProductDetail product={product}/>
+      <div className="Products_Card_Map_container">
+        <div className="Products_Card_Map">
+          <div className="Products_Cards_Grid">
+            {
+              products?.map((product) => {
+                return (
+                  <div key={product.id} className="Product_Cards" >
+                    <ProductIndexCard product={product} key={product.id} />
                   </div>
-                </div>
-              )
-            })
-          }
+                )
+              })
+            }
+          </div>
+        </div>
       </div>
+      
     )
   }
 }

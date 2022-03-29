@@ -75,3 +75,49 @@ p {
   line-height: 12px;
   margin-bottom: 5px;
 }
+
+element.style {
+  background-color: white;
+  width: 100%;
+  padding: 13px 20px;
+  height: 40px;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.button,
+a.button,
+button,
+[type=submit],
+[type=reset],
+[type=button] {
+  -webkit-appearance: none;
+  display: inline-block;
+  border: 1px solid rgba(24, 48, 56, var(--tw-bg-opacity));
+  border-radius: 4px;
+  --tw-bg-opacity: 1;
+  background-color: rgba(24, 48, 56, var(--tw-bg-opacity));
+  color: #ffffff;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  text-transform: none;
+  padding: 0.75rem 1.25rem;
+  margin: 0 0 0.5rem 0;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+}
+
+a.button:hover,
+button:hover,
+[type=submit]:hover,
+[type=reset]:hover,
+[type=button]:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
