@@ -1,16 +1,5 @@
 import React from 'react';
 
-// import ReviewShow from './review_show';
-
-// const reviewList = (reviews = []) => (
-//   reviews.map(review => (
-//     <ReviewShow
-//       review={review}
-//       key={review.id}
-//     />
-//   ))
-// );
-
 const ProductDetail = ({ product }) => {
   return (
     <div className="product_display">
@@ -24,10 +13,6 @@ const ProductDetail = ({ product }) => {
         <p>{product.description}</p>
       </div>
       <br/>
-      {/* <div className="reviews"> */}
-        {/* <h3>Reviews</h3>
-        {reviewList(product.reviews)}
-      </div> */}
     </div>
   );
 };

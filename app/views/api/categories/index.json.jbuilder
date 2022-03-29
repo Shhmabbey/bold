@@ -1,5 +1,6 @@
-json.array! @categories do |category|
-  # if !category.parent_category_id.beteen?(1, 5)
+@categories.each do |category|
+  json.set! category.id do
     json.partial! "api/categories/category", category: category
-  # end
+    json.sub_ctaegories category.sub_categories
+  end
 end

@@ -6,7 +6,7 @@ import HomepageContainer from "./homepage/homepage_container";
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import ProductsIndexContainer from "./product/product_index/product_index_container";
-import ProductsContainer from "./product/product_show/product_show_container"
+import ProductShowContainer from "./product/product_show/product_show_container"
 import GreetingContainer from "./homepage/greeting/greeting_container";
 
 const App = () => (
@@ -16,11 +16,11 @@ const App = () => (
     </header>
     <Switch>
       <Route exact path="/" component={GreetingContainer} />
-      <Route path="/products/:id" component={ProductsContainer} />
+      <Route exact path="/products/:id" component={ProductShowContainer} />
       <Route excat path="/products/" component={ProductsIndexContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <Redirect to='/' />
+      {/* <Redirect to='/' /> */}
     </Switch>
   </div>
 );

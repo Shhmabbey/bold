@@ -8,8 +8,8 @@ import usersReducer from "./users_reducer";
 const entitiesReducer = combineReducers({
   users: usersReducer,
   products: productsReducer,
+  categories: categoryReducer,
   reviews: reviewsReducer,
-  categories: categoryReducer
 });
 
 export default entitiesReducer;

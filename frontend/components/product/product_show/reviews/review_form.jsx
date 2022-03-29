@@ -4,11 +4,14 @@ import { withRouter } from 'react-router-dom';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      rating: 5,
-      title: '',
-      body: ''
-    };
+    // this.state = {
+    //   rating: "",
+    //   title: '',
+    //   body: '',
+    //   reviewer_id: "",
+    //   product_id: "",
+    //   helpful: ""
+    // };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateToProductShow = this.navigateToProductShow.bind(this);
   }
@@ -21,8 +24,10 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const productId = parseInt(this.props.match.params.productId);
+    // const reviewerId = parseInt(this.props.match.params.userId);
     const review = Object.assign({}, this.state, {
-      product_id: productId
+      product_id: productId,
+      // reviewer_id: reviewerId
     });
     this.props.createReview(review);
     this.navigateToProductShow();
