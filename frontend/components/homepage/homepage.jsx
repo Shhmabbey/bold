@@ -13,6 +13,18 @@ class Homepage extends React.Component {
     this.props.fetchAllCategories()
   }
 
+  sessionLinks(currentUser) {
+    const { openModal } = this.props;
+    return (
+      currentUser ? (
+        <Link to="/" className="Header_Link" onClick={this.props.logout} > Log Out </Link>
+      ) : (
+        // <Link to="/" onClick={() => openModal('Login')} className="Header_Link" > Sign In </Link>
+        <div className="Header_Link" onClick={() => openModal('Login')}> Sign In </div>
+      )
+    )
+  }
+
   navigation_bar(currentUser) {
     return(
       <div className="Header_Container_Items">
@@ -20,11 +32,7 @@ class Homepage extends React.Component {
           <img src="https://italic.com/static/icons/logo.svg" alt="logo" />
         </Link>
         <Search />
-        {currentUser ? (
-          <Link to="/" className="Header_Link" onClick={this.props.logout} > Log Out </Link>
-        ) : (
-          <Link to="/login" className="Header_Link" > Sign In </Link>)
-        }
+        { this.sessionLinks(currentUser) }
         {/* // TO DO: route to carts */}
         <Link to="/" className="Header_Link User_Cart" >
           <img src="https://italic.com/static/icons/empty-cart.svg" alt="cart" className='Header_Link_Cart' />

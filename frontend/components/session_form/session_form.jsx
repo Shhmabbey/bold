@@ -22,17 +22,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.action(user);
-  }
-
-  componentDidMount() {
-    this.unlisten = this.props.history.listen(() => {
-      this.props.clearSessionErrors();
-    });
+    this.props.action(user)
   }
 
   componentWillUnmount() {
-    this.unlisten();
+    this.props.clearSessionErrors();
   } 
 
   renderErrors() {
@@ -49,7 +43,7 @@ class SessionForm extends React.Component {
           ))
         )}
       </ul>
-    );
+    )
   }
 
   handleDemoLogin() {
@@ -70,8 +64,10 @@ class SessionForm extends React.Component {
       });
       count++;
       
-      if (count === 20) {
+      if (count === 18) {
         clearInterval(this.loginDemoInterval);
+        const demoUser = Object.assign({}, this.state);
+        this.props.action(demoUser).then(this.props.closeModal)
       }
     }, 80);
   }
@@ -90,7 +86,7 @@ class SessionForm extends React.Component {
             }
           }
         >
-          Guest Account
+          Continue with Guest Account
         </button>
       )
     )
@@ -125,11 +121,14 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const { formType } = this.props
+    const { formType, openModal, closeModal } = this.props
     const register = (formType === "Signup");
     
     return (
-      <div className="session-form-container">
+      <div className="Session_Form_Container">
+        <div role="button" tabIndex="0" className="Close_Button">
+          <img onClick={() => closeModal()} src="https://italic.com/static/icons/close.svg" height="10" width="10" className="Close" alt="close"/>
+        </div>
         <div>
           <p className="Login_Header">Login or Register</p>
         </div>
@@ -139,8 +138,7 @@ class SessionForm extends React.Component {
           </p>
           <form onSubmit={this.handleSubmit} className="Session_Form_Box">
             <div className="session-form">
-              <br/>
-              <p className="Session_Form_Label">Email</p>
+              <p className="Session_Form_Label">Email Address</p>
               <label htmlFor="email" ></label>
                 <input 
                   id="email"
@@ -149,7 +147,6 @@ class SessionForm extends React.Component {
                   onChange={this.update('email')}
                   className="Session_Form_Input"
                   />
-              <br/>
               <p className="Session_Form_Label">Password</p>
               <label htmlFor="password"></label>
               <input
@@ -159,9 +156,9 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 className="Session_Form_Input"
               />
-              { this.renderErrors() }
               <br/>
               { this.registrationForm() }
+              { this.renderErrors() }
               <br/>
               <input 
                 className="session-submit"
@@ -171,12 +168,12 @@ class SessionForm extends React.Component {
             </div>
             { this.demoLoginButton() }
           </form>
-          <Link
-            to={ register ? "/login" : "/signup" }
+          <div
+            onClick={register ? (() => openModal('Login')) : (() => openModal('Signup'))}
             className="switch-form-link"
           >
             {register ? "Sign In" : "Don't have an account? Sign Up"}
-          </Link>
+          </div>
         </div>
       </div>
     );

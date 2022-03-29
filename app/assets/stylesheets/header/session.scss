@@ -10,6 +10,19 @@ p {
   margin-inline-end: 0px;
 }
 
+element.style {
+  background-color: white;
+  width: 100%;
+  padding: 13px 20px;
+  height: 40px;
+  border-color: transparent;
+
+}
+
+div {
+  box-sizing: border-box;
+}
+
 %message-shared {
   padding: 10px;
   color: #333;
@@ -43,14 +56,26 @@ p {
   text-align: left !important;
 }
 
+.Session_Form_Box {
+  box-sizing: border-box;
+  display: block;
+  margin-top: 0em;
+  text-align: left !important;
+  line-height: inherit;
+}
+
 .Login_Header {
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
   padding-bottom: 25px;
-  border-bottom-width: 1px;
   box-sizing: border-box;
   text-align: left !important;
+  display: block;
+  font-family: Inter, Graphik, sans-serif;
+  --tw-border-opacity: 1;
+  // border-color: rgba(238, 238, 238, var(--tw-border-opacity));
+  border-bottom: 1px solid rgba(238, 238, 238, var(--tw-border-opacity));
 }
 
 .Login_Header_Greeting {
@@ -59,13 +84,16 @@ p {
   color: #171722;
   font-weight: 500;
   font-size: 22px;
+  margin: 0;
   line-height: 22px;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: left !important;
+
 }
 
 .Session_Form_Label {
+  padding-top: 0px;
   text-align: left !important;
   font-family: Inter, Graphik, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -73,19 +101,11 @@ p {
   font-weight: 500;
   font-size: 12px;
   line-height: 12px;
+  margin: 0;
   margin-bottom: 5px;
 }
 
-element.style {
-  background-color: white;
-  width: 100%;
-  padding: 13px 20px;
-  height: 40px;
-}
 
-div {
-  box-sizing: border-box;
-}
 
 .button,
 a.button,
@@ -120,4 +140,33 @@ button:hover,
 [type=button]:hover {
   color: #ffffff;
   text-decoration: none;
+}
+
+.Session_Form_Container {
+  width: 375px;
+  height: 100%;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .3s;
+  transition-property: all;
+  text-align: left !important;
+  padding: 25px;
+  min-height: 340px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.Close_Button {
+  cursor: pointer;
+  box-sizing: border-box;
+
+  img {
+    width: 10px;
+    height: 10px;
+    z-index: 20;
+    top: 1.75rem;
+    right: 25px;
+    position: absolute;
+    max-width: 100%;
+    display: block;
+  }
 }
