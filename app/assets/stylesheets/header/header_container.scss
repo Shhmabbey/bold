@@ -73,7 +73,6 @@
     text-align: center;
     letter-spacing: normal;
     word-spacing: normal;
-    // color: #171722;
     font-weight: 400;
     font-family: Inter, Graphik, sans-serif;
     border-color: transparent;
@@ -82,6 +81,7 @@
     white-space: nowrap;
     --tw-text-opacity: 1;
     color: rgba(85, 85, 85, var(--tw-text-opacity));
+    cursor: pointer;
   }
 
   .Logo {

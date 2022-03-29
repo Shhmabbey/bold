@@ -4,7 +4,6 @@ import { fetchProduct } from '../../../actions/product_actions';
 import { fetchAllReviews } from '../../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log(state.entities.products.reviews)
   // const reviews = [];
   // if (state.entities.products.reviews) {
   //   reviews = Object.values(state.entities.products.reviews)
