@@ -26,7 +26,7 @@ class ProductShow extends React.Component {
         <div className="right-half product-details">
           <ProductDetail product={product} />
           <div className="reviews">
-            <p>Reviews</p>
+            <p>Product Reviews</p>
             {/* <ReviewLink
               component={ReviewFormContainer}
               to={`/products/${product.id}/review`}
