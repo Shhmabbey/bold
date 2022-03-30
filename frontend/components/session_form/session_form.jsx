@@ -156,10 +156,8 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 className="Session_Form_Input"
               />
-              <br/>
               { this.registrationForm() }
               { this.renderErrors() }
-              <br/>
               <input 
                 className="session-submit"
                 type="submit"
@@ -169,7 +167,7 @@ class SessionForm extends React.Component {
             { this.demoLoginButton() }
           </form>
           <div
-            onClick={register ? (() => openModal('Login')) : (() => openModal('Signup'))}
+            onClick={register ? (() => openModal({ modal: 'Login' })) : (() => openModal({ modal: 'Signup'}))}
             className="switch-form-link"
           >
             {register ? "Sign In" : "Don't have an account? Sign Up"}

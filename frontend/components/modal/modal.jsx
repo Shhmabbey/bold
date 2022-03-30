@@ -3,18 +3,24 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+import ReviewFormContainer from '../product/product_show/reviews/review_form_container';
+
 
 function Modal({modal, closeModal}) {
   if (!modal) {
     return null;
   }
   let component;
-  switch (modal) {
+
+  switch (modal.modal ||= modal) {
     case 'Login':
       component = <LoginFormContainer />;
       break;
     case 'Signup':
       component = <SignupFormContainer />;
+      break;
+    case 'Review':
+      component = <ReviewFormContainer />
       break;
     default:
       return null;
@@ -30,7 +36,7 @@ function Modal({modal, closeModal}) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
   };
 };
 

@@ -1,28 +1,23 @@
 import { connect } from 'react-redux';
 import ProductShow from './product_show';
 import { fetchProduct } from '../../../actions/product_actions';
-import { fetchAllReviews } from '../../../actions/review_actions';
+import { openReviewModal, closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // const reviews = [];
-  // if (state.entities.products.reviews) {
-  //   reviews = Object.values(state.entities.products.reviews)
-  // }
-
+  console.log(state);
   return {
     product: state.entities.products[ownProps.match.params.id],
     currentUser: state.entities.users[state.session.id],
     productId: ownProps.match.params.id,
     categories: state.entities.categories,
-    reviews: state.entities.products.reviews
-    // Object.values(state.entities.products["reviews"])
-    // reviews: reviews
+    reviews: state.entities.reviews
   }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchProduct: () => dispatch(fetchProduct(ownProps.match.params.id)),
-  // fetchAllReviews: () => dispatch(fetchAllReviews())
+  openReviewModal: modal => dispatch(openReviewModal(modal)),
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(

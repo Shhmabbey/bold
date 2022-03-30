@@ -1,3 +1,4 @@
+import { RECEIVE_PRODUCT } from "../actions/product_actions";
 import {
   RECEIVE_ALL_REVIEWS,
   RECEIVE_REVIEW,
@@ -5,11 +6,15 @@ import {
   DELETE_REVIEW,
 } from "../actions/review_actions";
 
+
+
 const reviewsReducer = (state = {}, action) => {
   Object.freeze(state)
   let nextState = Object.assign({}, state)
   
   switch (action.type) {
+    case RECEIVE_PRODUCT:
+      return action.product.reviews
     case RECEIVE_REVIEW:
       nextState[action.review.id] = action.review
       return nextState
