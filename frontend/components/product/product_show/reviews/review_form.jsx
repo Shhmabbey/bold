@@ -24,12 +24,16 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const review = Object.assign({}, this.state);
-    this.props.createReview(review).then(this.props.closeModal);
+    this.props.action(review).then(this.props.closeModal);
+  }
+
+  componentDidMount() {
+    this.render()
   }
 
   componentWillUnmount() {
     this.props.clearReviewErrors();
-  } 
+  }
 
   renderErrors() {
     const { errors } = this.props
@@ -49,8 +53,9 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    const { closeModal } = this.props;
-
+    const { formType, closeModal, product } = this.props;
+    const create = (formType === "Review");
+    console.log(this.props)
     return (
       <div className="Review_Form">
         <form onSubmit={this.handleSubmit} className="Review_Form_Box">
@@ -59,7 +64,7 @@ class ReviewForm extends React.Component {
           </div>
           <div className="Review_Form_Header">
             <div className="Review_Form_Header_Content">
-              <h1>Leave a Review</h1>
+              <h1>{create ? "Leave a Review" : "Edit Review"}</h1>
             </div>
           </div>
           <div className="Review_Form_Body">
@@ -68,7 +73,7 @@ class ReviewForm extends React.Component {
             </div>
             <div className="Review_Form_Body_Right">
               <div className="Review_Form_Body_Right_Context">
-                <h3>Product Title</h3>
+                <h3>{ product.title }</h3>
                 <p>
                   Purchased on Mar 17, 2022
                 </p>
