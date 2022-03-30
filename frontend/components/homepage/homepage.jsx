@@ -19,7 +19,7 @@ class Homepage extends React.Component {
       currentUser ? (
         <Link to="/" className="Header_Link" onClick={this.props.logout} > Log Out </Link>
       ) : (
-        <div className="Header_Link" onClick={() => openModal('Login')}> Sign In </div>
+        <div className="Header_Link" onClick={() => openModal({modal: 'Login'})}> Sign In </div>
       )
     )
   }

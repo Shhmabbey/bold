@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Switch, Redirect } from 'react-router'
-import { AuthRoute } from '../util/route_util';
+// import { AuthRoute } from '../util/route_util';
 
 import HomepageContainer from "./homepage/homepage_container";
-import SignupFormContainer from './session_form/signup_form_container';
-import LoginFormContainer from './session_form/login_form_container';
+// import SignupFormContainer from './session_form/signup_form_container';
+// import LoginFormContainer from './session_form/login_form_container';
 import Modal from './modal/modal';
 import ProductsIndexContainer from "./product/product_index/product_index_container";
 import ProductShowContainer from "./product/product_show/product_show_container"

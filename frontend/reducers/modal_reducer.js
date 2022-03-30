@@ -1,10 +1,15 @@
-import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
+import { 
+  OPEN_MODAL,
+  CLOSE_MODAL,
+  OPEN_REVIEW_MODAL
+} from '../actions/modal_actions';
 
 export default function modalReducer(state = null, action) {
-  console.log("Reducer Modal action type:", action.type)
   switch (action.type) {
     case OPEN_MODAL:
-      return action.modal;
+      return {modal: action.modal};
+    case OPEN_REVIEW_MODAL:
+      return { modal: action.modal, payload: action.payload };
     case CLOSE_MODAL:
       return null;
     default:

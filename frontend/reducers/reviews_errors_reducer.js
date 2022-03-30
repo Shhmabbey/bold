@@ -1,7 +1,8 @@
 import {
   RECEIVE_REVIEW,
   UPDATE_REVIEW,
-  RECEIVE_REVIEW_ERRORS
+  RECEIVE_REVIEW_ERRORS,
+  CLEAR_REVIEW_ERRORS
 } from "../actions/review_actions";
 
 const _nullReviewErrors = [];
@@ -15,6 +16,8 @@ export default (state = _nullReviewErrors, action) => {
     case RECEIVE_REVIEW:
       return _nullReviewErrors;
     case UPDATE_REVIEW:
+      return _nullReviewErrors;
+    case CLEAR_REVIEW_ERRORS:
       return _nullReviewErrors;
     default:
       return state;

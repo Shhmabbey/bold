@@ -4,19 +4,19 @@ class Api::ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all
-    render 'api/products/show'
+    render :index
   end
 
-  def index
+  def show
     @review = Review.find(params[:id])
-    render 'api/products/show'
+    render :show
   end
   
   def create
     @review = Review.new(review_params)
 
     if @review.save
-      render 'api/products/show'
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -26,7 +26,7 @@ class Api::ReviewsController < ApplicationController
     @review = Review.find_by(id: params[:id])
 
     if @review.update(review_params)
-      render 'api/products/show'
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -35,7 +35,7 @@ class Api::ReviewsController < ApplicationController
   def destroy
     @review = Review.find_by(id: params[:id])
     @review.destroy
-    render 'api/products/show'
+    render :index
   end
 
   private
