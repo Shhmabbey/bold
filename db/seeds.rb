@@ -1,3 +1,5 @@
+require 'open-uri'
+
 User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users') #this resets the id
 Category.destroy_all
@@ -41,7 +43,6 @@ categoryList = [
 ]
 categoryList.each { |category| Category.create!( title: category[0], parent_category_id: (category[1] ||= nil) ) }
 
-require 'open-uri'
 
 # PET PRODUCTS SEEDS
 # Cashmere Cable Knit Dog Sweater ##
