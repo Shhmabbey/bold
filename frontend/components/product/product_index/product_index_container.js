@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchAllProducts: () => dispatch(fetchAllProducts()),
-  // fetchProduct: (productId) => dispatch(fetchProduct(productId)),
+  fetchProduct: (productId) => dispatch(fetchProduct(productId)),
 });
 
 export default connect(

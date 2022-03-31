@@ -1,16 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class ReviewForm extends React.Component {
+class EditReviewForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      rating: "",
-      title: '',
-      body: '',
+      id: this.props.review.id,
+      rating: this.props.review.rating,
+      title: this.props.review.title,
+      body: this.props.review.body,
       reviewer_id: this.props.currentUser.id,
       product_id: this.props.product.id,
-      helpful: 0
+      helpful: this.props.product.helpful
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,6 +23,7 @@ class ReviewForm extends React.Component {
   }
 
   handleSubmit(e) {
+    alert('Update Recieved.');
     e.preventDefault();
     const review = Object.assign({}, this.state);
     this.props.action(review).then(this.props.closeModal);
@@ -53,11 +55,16 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    const { formType, closeModal, product } = this.props;
+    const { formType, closeModal, product, deleteReview, review } = this.props;
     const create = (formType === "Review");
     return (
       <div className="Review_Form">
         <form onSubmit={this.handleSubmit} className="Review_Form_Box">
+          <div>
+            <div className="Review_Button" onClick={() => deleteReview(review.id).then(this.props.closeModal) }>
+              Delete
+            </div>
+          </div>
           <div role="button" tabIndex="0" className="Close_Button">
             <img onClick={() => closeModal()} src="https://italic.com/static/icons/close.svg" height="10" width="10" className="Close" alt="close" />
           </div>
@@ -108,7 +115,7 @@ class ReviewForm extends React.Component {
                 onChange={this.update("body")}
               className="Review_Form_Input"
               />
-              {this.renderErrors()}
+              { this.renderErrors() }
             <input
               className="Review_Submit"
               type="submit"
@@ -120,4 +127,4 @@ class ReviewForm extends React.Component {
  }
 }
 
-export default withRouter(ReviewForm);
+export default withRouter(EditReviewForm);
