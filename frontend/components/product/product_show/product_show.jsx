@@ -24,17 +24,18 @@ class ProductShow extends React.Component {
     )
   }
 
-  handleProductReviews(openReviewModal, reviews, product, currentUser) {
+  handleProductReviews(openReviewModal, reviews, product, currentUser, deleteReview) {
     return (
       <div className="Reviews_Index_Container">
         <div className="Reviews_Index_Header">
           <div className="Reviews_Index_Title">
-            <p>Product Reviews</p>
+            <p className="Review_Title">Product Reviews</p>
+            <p className="Review_Title">{reviews.length}</p>
           </div>
           { this.reviewProduct(openReviewModal, product, currentUser) }
         </div>
         <div className="Review_Card_Map">
-          { reviews?.map((review) => <ReviewCard review={review} />) }
+          {reviews?.map((review) => <ReviewCard review={review} currentUser={currentUser} product={product} openReviewModal={openReviewModal} deleteReview={deleteReview} />) }
         </div>
       </div>
     )
@@ -43,15 +44,24 @@ class ProductShow extends React.Component {
   render(){
     if (!this.props.product || !this.props.reviews) return null;
     
-    const reviews = Object.values(this.props.reviews)
-    const { openReviewModal, product, currentUser } = this.props;
+    const reviews = Object.values(this.props.reviews);
+    const { openReviewModal, product, currentUser, deleteReview } = this.props;
 
     return (
-      <div className="single-product-show">
-        <div className="right-half product-details">
+      <div className="Product_Show_Grid">
+        <div className="Product_Show_Main">
+          <div className="Product_Photos">
+            <img></img>
+          </div>
+          <div className="Detail_labels">
+            <p>Details</p>
+            <p>Reviews</p>
+            <p>related</p>
+          </div>
           <ProductDetail product={product} />
-          { this.handleProductReviews(openReviewModal, reviews, product, currentUser) }
+          {this.handleProductReviews(openReviewModal, reviews, product, currentUser, deleteReview) }
         </div>
+        <div className="Product_Show_Right"></div>
       </div>
     );
   }

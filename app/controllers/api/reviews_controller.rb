@@ -34,8 +34,8 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find_by(id: params[:id])
-    @review.destroy
-    render :index
+    @product = Product.find_by(id: @review.product_id)
+    render "api/products/show" if @review.destroy
   end
 
   private

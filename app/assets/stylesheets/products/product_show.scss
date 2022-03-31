@@ -1,0 +1,60 @@
+.Review_Card_container{
+  border: 1px dotted blue;
+  padding-top: 15px;
+}
+
+.Product_Show_Grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 0px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+// .Product_Show_Main {
+//   // background-color: aqua;
+// }
+
+// .Product_Show_Right {
+//   // background-color: sandybrown;
+// }
+
+.Product_Photos {
+  background-color: darkcyan;
+  width: 100%;
+  height: 750px;
+}
+
+.Create_Review_Link {
+  z-index: 20;
+  color: white;
+  background-color: palevioletred;
+}
+
+
+// REVIEWS
+
+.Review_Title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 160%;
+  --tw-text-opacity: 1;
+  color: rgba(0, 0, 0, var(--tw-text-opacity));
+  padding-bottom: 7px;
+}
+
+.Review_Svg {
+  height: 12px;
+  width: 12px;
+  margin-right: 6px;
+  margin-top: 4px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.Review_Img {
+  height: 10px;
+  margin-left: 10px;
+}

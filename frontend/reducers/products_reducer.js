@@ -11,7 +11,6 @@ const productsReducer = (state = {}, action) => {
     case RECEIVE_ALL_PRODUCTS:
       return action.products;
     case RECEIVE_PRODUCT:
-      // nextState["reviews"] = action.product.reviews;
       nextState[action.product.product.id] = action.product.product;
       return nextState;
     default:

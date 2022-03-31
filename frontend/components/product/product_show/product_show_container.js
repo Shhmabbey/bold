@@ -4,7 +4,6 @@ import { fetchProduct } from '../../../actions/product_actions';
 import { openReviewModal, closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   return {
     product: state.entities.products[ownProps.match.params.id],
     currentUser: state.entities.users[state.session.id],

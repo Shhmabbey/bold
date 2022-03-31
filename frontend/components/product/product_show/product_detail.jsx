@@ -7,7 +7,7 @@ const ProductDetail = ({ product }) => {
         <h4>{product.title}</h4>
       </div>
       <div className="product_display_price">
-        <h4>${product.price}</h4>
+        <h4>${product.price}0</h4>
       </div>
       <div className="product_display_description">
         <p>{product.description}</p>

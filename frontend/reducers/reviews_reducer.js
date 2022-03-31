@@ -11,12 +11,12 @@ import {
 const reviewsReducer = (state = {}, action) => {
   Object.freeze(state)
   let nextState = Object.assign({}, state)
-  
+
   switch (action.type) {
     case RECEIVE_PRODUCT:
       return action.product.reviews
     case RECEIVE_REVIEW:
-      nextState[action.review.id] = action.review
+      nextState[action.review.review.id] = action.review.review
       return nextState
     case RECEIVE_ALL_REVIEWS:
       return action.reviews
@@ -24,7 +24,7 @@ const reviewsReducer = (state = {}, action) => {
       delete nextState[action.reviewId];
       return nextState;
     case UPDATE_REVIEW:
-      nextState[action.review.id] = action.review
+      nextState[action.review.review.id] = action.review.review;
       return nextState
     default:
       return state;

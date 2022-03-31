@@ -1,16 +1,3 @@
-export const fetchAllReviews = () => {
-  return $.ajax({
-    method: "GET",
-    url: '/api/reviews'
-  })
-}
-
-export const fetchReview = (reviewId) => {
-  return $.ajax({
-    method: "GET",
-    url: `/api/reviews/${reviewId}`,
-  })
-}
 
 export const createReview = (review) => {
   return $.ajax({
@@ -34,3 +21,17 @@ export const deleteReview = (reviewId) => {
     data: { reviewId }
   })
 }
+
+  // export const fetchAllReviews = () => {
+  //   return $.ajax({
+  //     method: "GET",
+  //     url: '/api/reviews'
+  //   })
+  // }
+  
+  // export const fetchReview = (reviewId) => {
+  //   return $.ajax({
+  //     method: "GET",
+  //     url: `/api/reviews/${reviewId}`,
+  //   })
+  // }
