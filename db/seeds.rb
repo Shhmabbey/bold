@@ -27,20 +27,17 @@ end
 # END
 
 categoryList = [
-  ['Women'],
+  ['Women']
   ['Men'],
   ['Home'],
-  ['Pets'],
-  ['Clothing', 1],
-  ['Shoes', 1],
-  ['Accessories', 1],
-  ['Bags', 1],
-  ['Clothing', 2],
-  ['Shoes', 2],
-  ['Accessories', 2],
-  ['Bag & Backpacks', 2],
+  ['Pets']
 ]
 categoryList.each { |category| Category.create!( title: category[0], parent_category_id: (category[1] ||= nil) ) }
+
+womens = Category.create!( title: 'Women', parent_category_id:  nil )
+mens = Category.create!( title: 'Men', parent_category_id:  nil )
+pets =Category.create!( title: 'Pets', parent_category_id:  nil )
+
 
 
 # PET PRODUCTS SEEDS
@@ -50,7 +47,7 @@ cashmereDogSweater = Product.create!(
   description: "Introduce your furry friend to the coziness of 100% cashmere with our soft cable-knit sweater. Boasting a ribbed neck and sleeves for added comfort, it’s perfect for keeping your cold weather-sensitive pup nice and warm or just simply letting your dog make their own style statement. Either way, it’s worth the tail wagging.",
   price: 55.00,
   stock: 10,
-  category_id: 3
+  category_id: pets.id
 )
 file1 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds1.jpeg')
 file2 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds2.jpeg')
@@ -69,7 +66,7 @@ maxwellPetBed = Product.create!(
   description: "Your best friend deserves the very best. Made for style, durability, and comfort, this pet bed will be as aesthetically pleasing to you as it is plush for your furry companion.",
   price: 30.00,
   stock: 10,
-  category_id: 3
+  category_id: pets.id
 )
 file1 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/mpb1.jpeg')
 file2 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/mpb2.jpeg')
@@ -88,7 +85,7 @@ maxwellPetBed.photos.attach(io: file5, filename: 'pets/mpb5.jpeg')
     description: "Sleek and practical, this design marvel features two removable bowls with smooth, glass-like surfaces that make cleaning a snap. ",
     price: 16.00,
   stock: 10,
-  category_id: 3
+  category_id: pets.id
 )
 
 file1 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/gdb1.jpeg')
@@ -104,7 +101,7 @@ doublePetBowl.photos.attach(io: file3, filename: 'pets/gdb3.jpeg')
     description: "This long sleeve tee is soft, stretchy, and just the right weight for all types of movement. Worn alone or as a top layer, its breathable, moisture-wicking nylon-spandex blend will keep you dry and cool.",
     price: 30.00,
   stock: 10,
-  category_id: 2
+  category_id: mens.id
 )
 
 file1 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/mens_shirt_1.jpeg')
@@ -120,7 +117,7 @@ mensTop.photos.attach(io: file3, filename: 'mens_shirt_3.jpeg')
     description: "These flattering, relaxed-fit pants were designed with a wide waistband to ensure peak comfort (whether you're at the gym or on the couch). The moisture-wicking fabric ensures they'll never see you sweat. Designed with a tapered leg, two deep front pockets, and one interior phone pocket, they’re infinitely more useful (and flattering) than your average sweats.",
     price: 32.00,
   stock: 10,
-  category_id: 2
+  category_id: mens.id
 )
 
 file1 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/mens_pant_1.jpeg')
@@ -137,7 +134,7 @@ mensPant.photos.attach(io: file3, filename: 'mens_pant_3.jpeg')
     description: "Crafted from a blend of cashmere and Basolan wool, this V-neck cardigan makes every piece in your closet — be it a t-shirt or a suit — look dignified. Fluffy, warm, soft, and luxurious, our wool is specially treated with DCCA to make it extra durable and shrink-resistant. The timeless, flattering cut, ribbed wool detailing, and two patch pockets make this piece a sweater you’ll wear forever.",
     price: 32.00,
   stock: 10,
-  category_id: 2
+  category_id: mens.id
 )
 
 file1 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/mens_1.jpeg')
@@ -153,7 +150,7 @@ mensCard.photos.attach(io: file3, filename: 'mens_3.jpeg')
     description: "Meet the first-ever actually flattering boxy tee, made from a super soft lightweight cotton jersey. It's the wardrobe staple we can’t stop reaching for.",
     price: 15.00,
   stock: 10,
-  category_id: 1
+  category_id: womens.id
 )
 
 file1 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/w_crop_1.jpeg')
@@ -169,7 +166,7 @@ womTop.photos.attach(io: file3, filename: 'w_crop_3.jpeg')
     description: "The 14k Solid Gold Faceted Huggie Earrings might seem simple upon first glance, but they’re chiseled from 14k solid gold and beveled to catch the light — casting head-turning sparkles in every direction. Made in New York City and designed for everyday wear, these earrings are that little something extra you’re looking for.",
     price: 165.00,
   stock: 10,
-  category_id: 1
+  category_id: womens.id
 )
 
 file1 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/w_e_1.jpeg')
@@ -185,7 +182,7 @@ womE.photos.attach(io: file3, filename: 'w_e_3.jpeg')
     description: "Our Wilshire Round Acetate Sunglasses are designed to be oversized, universally flattering, and all-around impressive. Crafted from durable Italian-made Mazzucchelli acetate and outfitted with Zeiss lenses and best-in-class OBE hinges, the Wilshire reduces glare and induces compliments.",
     price: 30.00,
   stock: 10,
-  category_id: 1
+  category_id: womens.id
 )
 
 file1 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/w_sg_1.jpeg')
