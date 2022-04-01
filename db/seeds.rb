@@ -26,14 +26,6 @@ demo = User.create!(first_name: 'Demo', last_name: 'User', email: 'demo@email.co
 end
 # END
 
-categoryList = [
-  ['Women']
-  ['Men'],
-  ['Home'],
-  ['Pets']
-]
-categoryList.each { |category| Category.create!( title: category[0], parent_category_id: (category[1] ||= nil) ) }
-
 womens = Category.create!( title: 'Women', parent_category_id:  nil )
 mens = Category.create!( title: 'Men', parent_category_id:  nil )
 pets =Category.create!( title: 'Pets', parent_category_id:  nil )
