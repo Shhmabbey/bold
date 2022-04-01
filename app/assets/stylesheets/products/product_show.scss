@@ -177,7 +177,7 @@
   display: block;
   padding-bottom: 0%;
   margin-bottom: 0%;
-  border-bottom: 0.5px dotted rgba(85, 85, 85, 1);
+  // border-bottom: 0.5px dotted rgba(85, 85, 85, 1);
   // flex-flow: nowrap;
 }
 
@@ -205,10 +205,23 @@
   right: 0;
   left: 0;
 
-  &:hover {
-    border-bottom: 3px solid #171722;
-    cursor: pointer;
-  }
+  &:after {
+  content: "";
+  display: block;
+  transform: scale(0);
+  margin-bottom: -2px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #171722;
+  transition: 0.2s ease-in-out;
+}
+
+&:hover:after {
+  content: "";
+  color: #171722;
+  display: block;
+  transform: scale(1);
+  transition: 0.2s ease-in;
+}
 }
 
 .Category_Path {
@@ -404,6 +417,11 @@
   display: flex;
   box-sizing: border-box;
   white-space: nowrap;
+
+  &:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(214, 212, 212);
+  }
 }
 
 .Review_Button_Text {
@@ -460,4 +478,282 @@
       height: 9px;
     }
   }
+}
+
+
+// review edit
+
+#Review_Submit{
+  width: 30%;
+  text-align: center;
+}
+
+#submit_edit{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Review_Form {
+  padding-left: 30px;
+  padding-right: 30px;
+  min-height: 540px;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: left;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+.Review_Form_Header {
+  padding-bottom: 12px;
+  padding-top: 30px;
+  z-index: 20;
+  position: relative;
+  box-sizing: inherit;
+  margin: 0;
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  color: #222;
+  --vh: 9.61px;
+}
+
+.Review_Form_Header_Content{
+  justify-content: space-between;
+  display:flex;
+  margin: 0;
+  text-align: left;
+  color: #222;
+  --vh: 9.61px;
+
+  h1 {
+    font-size: 32px;
+    line-height: 36px;
+    font-family: "Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: block;
+    padding-left: 45px;
+    padding-bottom: -10px;
+
+  }
+}
+
+.Review_Form_Body{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 22px;
+  grid-row-gap: 0px;
+  padding-left: 45px;
+  padding-right: 45px;
+
+}
+
+.Review_Form_Image img {
+  width: 213px;
+  height: 213px;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  margin-right: 18px !important;
+}
+
+.Review_Form_Body_Right{
+  max-width: 244px;
+  flex-direction: column !important;
+  display: flex !important;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  --vh: 9.61px;
+
+}
+
+.Review_Form_Body_Right_Context{
+  display: block;
+  h3 {
+    font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    margin-bottom: 6px !important;
+    text-align: left;
+    --vh: 9.61px;
+
+  }
+
+  p {
+    font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #595959;
+    position: relative;
+    text-align: left;
+    --vh: 9.61px;
+  }
+}
+
+.quantity p {
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  margin-top: 12px
+  
+
+}
+
+.Review_Form_Body_Discription {
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(34, 34, 34, 0.15);
+  display: block;
+  margin: 0;
+  padding: 0;
+  padding-top: 8px;
+  border: 0;
+  font: inherit;
+  text-align: center;
+
+  p {
+    font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    padding-left: 60px;
+    padding-top: 4px;
+  }
+
+  label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    text-align: center;
+  }
+
+  input, textarea {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    padding: 10px 5px 10px 10px;
+    border: .3px solid #5e5b5b;
+    box-shadow: inset 0px 0px 2px #5e5b5b;
+    transition: ease-in 0.2s;
+    font-weight: 200;
+    width: 85%;
+    // margin-bottom: 15px;
+    border-radius: 5px;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CREDIT To Artem @komarovdesign
+// https://codepen.io/komarovdesign
+.quantity {
+  position: relative;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 45px;
+  height: 42px;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  border: 1px solid #eee;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 42px;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  border-left: 1px solid #eee;
+  width: 20px;
+  text-align: center;
+  color: #333;
+  font-size: 13px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
 }

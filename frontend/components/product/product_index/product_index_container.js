@@ -9,10 +9,12 @@ const mapStateToProps = (state, ownProps) => ({
   categoryId: ownProps.match.params.categoryId
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchAllProducts: () => dispatch(fetchAllProducts()),
-  fetchProduct: (productId) => dispatch(fetchProduct(productId)),
-});
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchAllProducts: () => dispatch(fetchAllProducts()),
+    fetchProduct: (productId) => dispatch(fetchProduct(productId)),
+  }
+};
 
 export default connect(
   mapStateToProps,

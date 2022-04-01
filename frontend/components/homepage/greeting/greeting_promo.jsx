@@ -17,7 +17,7 @@ class GreetingPromo extends React.Component {
               <p className="Greeting_Promo_Body">
                 Introducing elevated classics in 14k solid gold — fine jewelry made to be worn every day and last a lifetime.
               </p>
-              <a href="/" >
+              <a href="/products/" >
                <button id="Shop_Now_Button">SHOP NOW</button>
               </a>
             </div>

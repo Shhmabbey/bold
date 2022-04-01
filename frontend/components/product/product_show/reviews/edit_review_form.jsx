@@ -61,11 +61,6 @@ class EditReviewForm extends React.Component {
     return (
       <div className="Review_Form">
         <form onSubmit={this.handleSubmit} className="Review_Form_Box">
-          <div>
-            <div className="Review_Button" onClick={() => deleteReview(review.id).then(this.props.closeModal) }>
-              Delete
-            </div>
-          </div>
           <div role="button" tabIndex="0" className="Close_Button">
             <img onClick={() => closeModal()} src="https://italic.com/static/icons/close.svg" height="10" width="10" className="Close" alt="close" />
           </div>
@@ -77,6 +72,7 @@ class EditReviewForm extends React.Component {
           <div className="Review_Form_Body">
             <div className="Review_Form_Image">
               {/* image */}
+              <img src={product.photoUrls[0]} />
             </div>
             <div className="Review_Form_Body_Right">
               <div className="Review_Form_Body_Right_Context">
@@ -85,30 +81,31 @@ class EditReviewForm extends React.Component {
                   Purchased on Mar 17, 2022
                 </p>
               </div>
-              <div className="Review_Form_Body_Right_Rate">
-                <label htmlFor="rating">Star Rating Images!</label>
+              <div class="quantity"> 
+                <p>Rating: </p>
+                <label htmlFor="rating"></label>
                 <input
                   id="rating"
                   type="number"
+                  min="1" max="5"
                   value={this.state.rating}
                   onChange={this.update("rating")}
                   className="Review_Form_Input"
                 />
               </div>
-              <p>
-                My review rating
-              </p>
             </div>
           </div>
-          <div className="Review_Form_Body">
-            <label htmlFor="title">Title</label>
+          <div className="Review_Form_Body_Discription">
+            <p>Title</p>
+            <label htmlFor="title"></label>
               <input
                 type="text"
                 value={this.state.title}
                 onChange={this.update("title")}
                 className="Review_Form_Input"
               />
-            <label htmlFor="Body">Comment</label>
+            <p>Comment</p>
+            <label htmlFor="Body"></label>
               <textarea
                 cols="30"
                 rows="7"
@@ -118,9 +115,13 @@ class EditReviewForm extends React.Component {
               />
               { this.renderErrors() }
             <input
+              id="Review_Submit"
               className="Review_Submit"
               type="submit"
-              value="Submit Review"/>
+              value="Submit Changes"/>
+              <div className="Review_Button" id="submit_edit" onClick={() => deleteReview(review.id).then(this.props.closeModal)}>
+                Delete
+              </div>
           </div>
         </form>
       </div>

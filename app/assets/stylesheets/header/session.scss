@@ -2,111 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
-element.style {
-  background-color: white;
-  width: 100%;
-  padding: 13px 20px;
-  height: 40px;
-  border-color: transparent;
-
-}
-
-div {
-  box-sizing: border-box;
-}
-
-%message-shared {
-  padding: 10px;
-  color: #333;
-}
-
-.message {
-  @extend %message-shared;
-}
-
-.success {
-  @extend %message-shared;
-  color: green;
-}
-
-.error {
-  @extend %message-shared;
-  color: red;
-}
-
-.warning {
-  @extend %message-shared;
-  color: yellow;
-}
-
-%Session_Form_Input {
-  border-color: rgba(238, 238, 238, var(--tw-border-opacity));
-  border: 1px solid border-color;
-  border-radius: 0.375rem;
-  position: relative;
-  box-sizing: border-box;
-  text-align: left !important;
-}
-
-.Session_Form_Box {
-  box-sizing: border-box;
-  display: block;
-  margin-top: 0em;
-  text-align: left !important;
-  line-height: inherit;
-}
-
-.Login_Header {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  padding-bottom: 25px;
-  box-sizing: border-box;
-  text-align: left !important;
-  display: block;
-  font-family: Inter, Graphik, sans-serif;
-  --tw-border-opacity: 1;
-  // border-color: rgba(238, 238, 238, var(--tw-border-opacity));
-  border-bottom: 1px solid rgba(238, 238, 238, var(--tw-border-opacity));
-}
-
-.Login_Header_Greeting {
-  font-family: Inter, Graphik, sans-serif;
-  -webkit-text-size-adjust: 100%;
-  color: #171722;
-  font-weight: 500;
-  font-size: 22px;
-  margin: 0;
-  line-height: 22px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: left !important;
-
-}
-
-.Session_Form_Label {
-  padding-top: 0px;
-  text-align: left !important;
-  font-family: Inter, Graphik, sans-serif;
-  -webkit-text-size-adjust: 100%;
-  color: #171722;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 12px;
-  margin: 0;
-  margin-bottom: 5px;
-}
-
-
-
 .button,
 a.button,
 button,
@@ -170,3 +65,215 @@ button:hover,
     display: block;
   }
 }
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+element.style {
+  background-color: white;
+  width: 100%;
+  padding: 13px 20px;
+  height: 40px;
+  border-color: transparent;
+
+}
+
+div {
+  box-sizing: border-box;
+}
+
+%message-shared {
+  padding: 10px;
+  color: #333;
+}
+
+.message {
+  @extend %message-shared;
+}
+
+.success {
+  @extend %message-shared;
+  color: green;
+}
+
+.error {
+  @extend %message-shared;
+  color: red;
+}
+
+.warning {
+  @extend %message-shared;
+  color: yellow;
+}
+
+%Session_Form_Input {
+  border-color: rgba(238, 238, 238, var(--tw-border-opacity));
+  border: 1px solid border-color;
+  border-radius: 0.375rem;
+  position: relative;
+  box-sizing: border-box;
+  text-align: left !important;
+}
+
+.Session_Form_Box {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: center;
+
+  label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    text-align: center;
+  }
+
+  input:not(:last-child) {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    padding: 10px 5px 10px 10px;
+    border: 1px solid #5e5b5b;
+    box-shadow: inset 0px 0px 2px #5e5b5b;
+    transition: ease-in 0.2s;
+    font-weight: 200;
+    width: 330px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+  }
+
+  .session_submit {
+    white-space: nowrap;
+    height: 40px;
+    border-color: transparent;
+    display: block;
+    transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    width: 350px;
+    height: 40px;
+    transition: ease-in 0.15s;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+}
+
+
+.Session_Form_Register {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: center;
+
+  label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    text-align: center;
+  }
+
+  input {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    padding: 10px 5px 10px 10px;
+    border: 1px solid #5e5b5b;;
+    box-shadow: inset 0px 0px 2px #5e5b5b;
+    transition: ease-in 0.2s;
+    font-weight: 200;
+    width: 330px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+  }
+}
+
+.Login_Header {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  padding-bottom: 25px;
+  box-sizing: border-box;
+  text-align: left !important;
+  display: block;
+  font-family: Inter, Graphik, sans-serif;
+  --tw-border-opacity: 1;
+  border-bottom: 1px solid rgba(238, 238, 238, var(--tw-border-opacity));
+}
+
+.Login_Header_Greeting {
+  font-family: Inter, Graphik, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  color: #171722;
+  font-weight: 500;
+  font-size: 22px;
+  margin: 0;
+  line-height: 22px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left !important;
+
+}
+
+.Switch{
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.Session_Form_Label {
+  padding-top: 0px;
+  text-align: left !important;
+  font-family: Inter, Graphik, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  color: #171722;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+
+

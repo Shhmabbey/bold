@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.action(user)
+    this.props.action(user).then(this.props.closeModal);
   }
 
   componentWillUnmount() {
@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
             }
           }
         >
-          Continue with Guest Account
+          Continue with Demo Account
         </button>
       )
     )
@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
   registrationForm() {
     return (
       this.props.formType === "Signup" ? (
-        <div>
+        <div className="Session_Form_Register">
           <p className="Session_Form_Label" >First Name</p>
           <label htmlFor="first-name" >
             <input
@@ -168,7 +168,7 @@ class SessionForm extends React.Component {
           </form>
           <div
             onClick={register ? (() => openModal({ modal: 'Login' })) : (() => openModal({ modal: 'Signup'}))}
-            className="switch-form-link"
+            className="Switch"
           >
             {register ? "Sign In" : "Don't have an account? Sign Up"}
           </div>

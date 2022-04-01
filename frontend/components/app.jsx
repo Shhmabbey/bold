@@ -7,6 +7,7 @@ import Modal from './modal/modal';
 import ProductsIndexContainer from "./product/product_index/product_index_container";
 import ProductShowContainer from "./product/product_show/product_show_container"
 import GreetingContainer from "./homepage/greeting/greeting_container";
+import uhOh from "./homepage/under_development";
 
 const App = () => (
   <div>
@@ -17,8 +18,9 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={GreetingContainer} />
       <Route exact path="/products/:id" component={ProductShowContainer} />
-      <Route excat path="/products/" component={ProductsIndexContainer} />
-      {/* <Redirect to='/' /> */}
+      <Route exact path="/products/" component={ProductsIndexContainer} />
+      <Route exact path="/development/" component={uhOh} />
+      <Redirect to='/' />
     </Switch>
   </div>
 );

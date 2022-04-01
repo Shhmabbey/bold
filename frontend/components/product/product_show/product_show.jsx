@@ -24,7 +24,6 @@ class ProductShow extends React.Component {
             Leave a Review
           </div>
         </div>
-
         ) : null
     )
   }
@@ -65,20 +64,8 @@ class ProductShow extends React.Component {
     return (
       <div className="Product_Show_Grid">
         <div className="Product_Show_Main">
-          {/* <div className="Category_Path" >{categories[product.category_id].title}</div> */}
           {/* { this.displayCategories } TODO */}
-          {/* <ProductPhotoDisplay product={product}/> */}
           <ProductPhotoDisplay product={product}/>
-            {/* {
-              <div className="Product_Photos"> */}
-                {/* (product.photoUrls[0]) ? ( */}
-                  {/* <div className="Product_Photos_Separator">
-                    <img className="Product_Photo" src={product.photoUrls[0]} alt={product.title} /> */}
-                    {/* ) : ( null ) */}
-                  {/* </div>
-              </div>
-            } */}
-
           <div className="Detail_Labels">
             <h3 className="Tab">Details</h3>
             <h3 className="Tab">Reviews</h3>

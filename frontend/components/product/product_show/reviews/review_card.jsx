@@ -14,6 +14,11 @@ const ReviewCard = ({ review, currentUser, product, openReviewModal} ) => {
         </div>
         <div className="Review_Body">
           <div className="Review_Body_Title">{review.title}</div>
+          <div className="Review_Comment">
+            <div className="Review_Comment_Body">
+              <p>{review.body}</p>
+            </div>
+          </div>
           <div className="Review_Body_Author_Details_Container">
             <div className="Review_Body_Author_Details">
               <div className="Italic_Credits">
@@ -28,13 +33,8 @@ const ReviewCard = ({ review, currentUser, product, openReviewModal} ) => {
               <div className="Date">March 12, 2022</div>
               {/* <div className="Spacer">|</div> */}
               <div className="ml-s10 h-s10 min-w-s10">
-                <img className="Review_Img" src="https://italic.com/static/icons/checkfilled.svg" alt="verified"/>
+                <img className="Review_Img" src="https://italic.com/static/icons/checkfilled.svg" alt="verified" />
               </div>
-            </div>
-          </div>
-          <div className="Review_Comment">
-            <div className="Review_Comment_Body">
-              <p>{review.body}</p>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ const ReviewCard = ({ review, currentUser, product, openReviewModal} ) => {
                 ) : null
               }
           </div>
-          <div className="Flag" role="button" tabIndex="0" onClick={() => alert('Thank you for ')}>
+          <div className="Flag" role="button" tabIndex="0" onClick={() => alert('Thank you for notifying us.')}>
             <svg className="Review_Svg" viewBox="0 0 126 167" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round" strokeMiterlimit="2" fill="#C5C5C5" width="7px" height="9px"><path d="M56.155.002L56.152 0l-.001.002H0v166.002h13.509V83.299h41.599l20.791 13.715h49.412V13.718H76.945L56.165.009V.002h-.01z"></path></svg>
             Flag Review
           </div>

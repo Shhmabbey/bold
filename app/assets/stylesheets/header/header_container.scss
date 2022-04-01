@@ -160,7 +160,7 @@
 }
 
 .banner {
-  background-color: rgb(250, 245, 235);
+  background-color: rgb(247, 247, 247);
   --tw-border-opacity: 1;
   border-color: rgba(234, 234, 234, var(--tw-border-opacity));
   border-bottom-width: 1px;
@@ -268,6 +268,24 @@ button:hover,
 [type=submit]:hover,
 [type=reset]:hover,
 [type=button]:hover {
-  color: #ffffff;
+  color: rgb(42, 80, 93);
   text-decoration: none;
+}
+
+.Center_Banner{
+  background-color: #f7f7f7;
+  --tw-border-opacity: 1;
+  border-color: rgba(234, 234, 234, var(--tw-border-opacity));
+  border-bottom-width: 1px;
+  align-items: center;
+  height: 35px;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 14px;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  position: relative;
 }
