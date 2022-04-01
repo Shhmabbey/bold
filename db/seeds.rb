@@ -66,7 +66,7 @@ categoryList.each { |category| Category.create!( title: category[0], parent_cate
 
 ## Maxwell Pet Bed ##
 maxwellPetBed = Product.create!(
-    title: "Maxwell Pet Bed",
+  title: "Maxwell Pet Bed",
   description: "Your best friend deserves the very best. Made for style, durability, and comfort, this pet bed will be as aesthetically pleasing to you as it is plush for your furry companion.",
   price: 30.00,
   stock: 10,
