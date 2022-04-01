@@ -81,7 +81,7 @@ class EditReviewForm extends React.Component {
                   Purchased on Mar 17, 2022
                 </p>
               </div>
-              <div class="quantity"> 
+              <div className="quantity"> 
                 <p>Rating: </p>
                 <label htmlFor="rating"></label>
                 <input

@@ -36,7 +36,7 @@
     "npm": "6.14.16"
   },
   "scripts": {
-    "watch": "webpack --watch --mode=development",
+    "start": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
   "repository": {

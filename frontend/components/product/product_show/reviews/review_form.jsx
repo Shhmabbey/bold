@@ -68,7 +68,7 @@ class ReviewForm extends React.Component {
           </div>
           <div className="Review_Form_Body">
             <div className="Review_Form_Image">
-              {/* image */}
+              <img src={product.photoUrls[0]} />
             </div>
             <div className="Review_Form_Body_Right">
               <div className="Review_Form_Body_Right_Context">
@@ -77,37 +77,39 @@ class ReviewForm extends React.Component {
                   Purchased on Mar 17, 2022
                 </p>
               </div>
-              <div className="Review_Form_Body_Right_Rate">
-                <label htmlFor="rating">Star Rating Images!</label>
-                <input
-                  id="rating"
-                  type="number"
-                  value={this.state.rating}
-                  onChange={this.update("rating")}
-                  className="Review_Form_Input"
-                />
-              </div>
-              <p>
-                My review rating
-              </p>
+              {/* <div className="Review_Form_Body_Right_Rate"> */}
+                <div className="quantity">
+                  <p>Rating: </p>
+                  <label htmlFor="rating"></label>
+                  <input
+                    id="rating"
+                    type="number"
+                    value={this.state.rating}
+                    onChange={this.update("rating")}
+                    className="Review_Form_Input"
+                  />
+                </div>
+              {/* </div> */}
             </div>
           </div>
-          <div className="Review_Form_Body">
-            <label htmlFor="title">Title</label>
-              <input
-                type="text"
-                value={this.state.title}
-                onChange={this.update("title")}
-                className="Review_Form_Input"
-              />
-            <label htmlFor="Body">Comment</label>
-              <textarea
-                cols="30"
-                rows="7"
-                value={this.state.body}
-                onChange={this.update("body")}
+          <div className="Review_Form_Body_Discription">
+            <p>Title</p>
+            <label htmlFor="title"></label>
+            <input
+              type="text"
+              value={this.state.title}
+              onChange={this.update("title")}
               className="Review_Form_Input"
-              />
+            />
+            <p>Comment</p>
+            <label htmlFor="Body"></label>
+            <textarea
+              cols="30"
+              rows="7"
+              value={this.state.body}
+              onChange={this.update("body")}
+              className="Review_Form_Input"
+            />
               {this.renderErrors()}
             <input
               className="Review_Submit"
