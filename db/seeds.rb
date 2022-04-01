@@ -44,25 +44,25 @@ categoryList = [
 categoryList.each { |category| Category.create!( title: category[0], parent_category_id: (category[1] ||= nil) ) }
 
 
-# PET PRODUCTS SEEDS
-# Cashmere Cable Knit Dog Sweater ##
-cashmereDogSweater = Product.create!(
-  title: "Cashmere Cable Knit Dog Sweater",
-  description: "Introduce your furry friend to the coziness of 100% cashmere with our soft cable-knit sweater. Boasting a ribbed neck and sleeves for added comfort, it’s perfect for keeping your cold weather-sensitive pup nice and warm or just simply letting your dog make their own style statement. Either way, it’s worth the tail wagging.",
-  price: 55.00,
-  stock: 10,
-  category_id: 1
-)
-file1 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds1.jpeg')
-file2 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds2.jpeg')
-file3 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds3.jpeg')
-file4 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds4.jpeg')
-file5 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds5.jpeg')
-cashmereDogSweater.photos.attach(io: file1, filename: 'pets/cds1.jpeg')
-cashmereDogSweater.photos.attach(io: file2, filename: 'pets/cds2.jpeg')
-cashmereDogSweater.photos.attach(io: file3, filename: 'pets/cds3.jpeg')
-cashmereDogSweater.photos.attach(io: file4, filename: 'pets/cds4.jpeg')
-cashmereDogSweater.photos.attach(io: file5, filename: 'pets/cds5.jpeg')
+# # PET PRODUCTS SEEDS
+# # Cashmere Cable Knit Dog Sweater ##
+# cashmereDogSweater = Product.create!(
+#   title: "Cashmere Cable Knit Dog Sweater",
+#   description: "Introduce your furry friend to the coziness of 100% cashmere with our soft cable-knit sweater. Boasting a ribbed neck and sleeves for added comfort, it’s perfect for keeping your cold weather-sensitive pup nice and warm or just simply letting your dog make their own style statement. Either way, it’s worth the tail wagging.",
+#   price: 55.00,
+#   stock: 10,
+#   category_id: 1
+# )
+# file1 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds1.jpeg')
+# file2 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds2.jpeg')
+# file3 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds3.jpeg')
+# file4 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds4.jpeg')
+# file5 = URI.open('https://bold-dev.s3.us-west-1.amazonaws.com/pets/cds5.jpeg')
+# cashmereDogSweater.photos.attach(io: file1, filename: 'pets/cds1.jpeg')
+# cashmereDogSweater.photos.attach(io: file2, filename: 'pets/cds2.jpeg')
+# cashmereDogSweater.photos.attach(io: file3, filename: 'pets/cds3.jpeg')
+# cashmereDogSweater.photos.attach(io: file4, filename: 'pets/cds4.jpeg')
+# cashmereDogSweater.photos.attach(io: file5, filename: 'pets/cds5.jpeg')
 
 ## Maxwell Pet Bed ##
 maxwellPetBed = Product.create!(
