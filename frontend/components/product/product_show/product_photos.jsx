@@ -5,14 +5,12 @@ import React from 'react';
 // } from "react-icons/io5";
 
 const ProductPhotoDisplay = ( product ) => {
-  console.log("RENDER", product)
   if (!product.product.photoUrls) return null;
 
   let index = 0;
   // let displayOne = 1;
   // let defaultImage = product.photoUrls[index];
   let photos = product.product.photoUrls
-  console.log(photos)
 
     return (
       <div className="Outter_Photos_Container">
@@ -37,36 +35,6 @@ const ProductPhotoDisplay = ( product ) => {
               {/* <button className="Toggle_Right_Button" onClick={index ++ }><IoChevronForwardCircleOutline /></button> */}
             </div>
           </div>
-
-            {/* {photos.map((photoUrl, index) => (
-              <li
-                key={index}
-                className="picture-container-list-item-container"
-              >
-                <img
-                  className="picture-container-list-item"
-                  src={photoUrl}
-                  alt={photoUrl}
-                  onClick={this.clickPictureHandler}
-                />
-              </li>
-            ))} */}
-            {/* <ul className="Product_Photos">
-              {product.photoUrls.map((photo, index) => (
-                <li
-                  key={index}
-                  className="picture-container-list-item-container"
-                >
-                  <img
-                    className="picture-container-list-item"
-                    src={photo}
-                    alt={photo}
-                    onClick={this.clickPictureHandler}
-                  />
-                </li>
-              ))}
-            </ul>
-          </div> */}
         </div>
       </div>
     );

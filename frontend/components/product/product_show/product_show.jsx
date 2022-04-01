@@ -57,7 +57,7 @@ class ProductShow extends React.Component {
 
   render(){
     if (!this.props.product || !this.props.reviews || !this.props.categories) return null;
-    console.log(this.props.product.photoUrls)
+
     const reviews = Object.values(this.props.reviews);
     const { openReviewModal, product, currentUser, deleteReview, categories } = this.props;
 
