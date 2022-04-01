@@ -48,10 +48,10 @@ const ReviewCard = ({ review, currentUser, product, openReviewModal} ) => {
             </div>
               { currentUser ? (
                 (currentUser.id === review.reviewer_id) ? (
-                  <div className="Helpful_Two">
+                <div className="Helpful_Two">
                     <div className="Review_Button" role="button" tabIndex="0">
                         <div
-                          className="Review_Button"
+                      className="Review_Button_Text"
                           onClick={() => openReviewModal({ modal: 'Edit Review', payload: { product: product, review: review } })}
                         >
                           Edit or Delete
@@ -62,7 +62,7 @@ const ReviewCard = ({ review, currentUser, product, openReviewModal} ) => {
                 ) : null
               }
           </div>
-          <div className="Flag" role="button" tabIndex="0">
+          <div className="Flag" role="button" tabIndex="0" onClick={() => alert('Thank you for ')}>
             <svg className="Review_Svg" viewBox="0 0 126 167" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd" strokeLinejoin="round" strokeMiterlimit="2" fill="#C5C5C5" width="7px" height="9px"><path d="M56.155.002L56.152 0l-.001.002H0v166.002h13.509V83.299h41.599l20.791 13.715h49.412V13.718H76.945L56.165.009V.002h-.01z"></path></svg>
             Flag Review
           </div>
