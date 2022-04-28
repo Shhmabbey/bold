@@ -56,9 +56,6 @@ class Homepage extends React.Component {
               )
             })
           }
-          <Link to={`/products/`} className={`Product_Categories_Link`} >
-            All Products
-          </Link>
         </div>
       </div>
     )
