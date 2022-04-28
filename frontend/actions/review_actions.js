@@ -57,16 +57,19 @@ export const deleteReview = (reviewId) => dispatch => {
   .then(() => dispatch(destroyReview(reviewId)))
 }
 
-// export const receiveAllReviews = (reviews) => ({
-//   type: RECEIVE_ALL_REVIEWS,
-//   reviews
-// })
-// export const fetchAllReviews = () => dispatch => (
-//   ReviewsUtil.fetchAllReviews()
-//   .then(reviews => { dispatch(receiveAllReviews(reviews)) })
-//   )
-  
-// export const fetchReview = (reviewId) => dispatch => (
-//   ReviewsUtil.fetchReview(reviewId)
-//   .then(review => { dispatch(receiveReview(review)) })
-//   )
+// export const receiveAllReviews = (reviews) => {
+//   return {
+//     type: RECEIVE_ALL_REVIEWS,
+//     reviews
+//   }
+// }
+
+// export const fetchAllReviews = () => (dispatch) => {
+//   return ReviewsUtil.fetchAllReviews()
+//     .then(reviews => dispatch(receiveAllReviews(reviews)))
+// }
+
+// export const fetchReview = (reviewId) => dispatch => {
+//   return ReviewsUtil.fetchReview(reviewId)
+//   .then(review => dispatch(receiveReview(review)))
+//   }
