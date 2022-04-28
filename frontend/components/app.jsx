@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Switch, Redirect } from 'react-router'
-// import { AuthRoute } from '../util/route_util';
 
 import HomepageContainer from "./homepage/homepage_container";
 import Modal from './modal/modal';
@@ -18,7 +17,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={GreetingContainer} />
       <Route exact path="/products/:id" component={ProductShowContainer} />
-      <Route exact path="/products/" component={ProductsIndexContainer} />
+      <Route exact path="/categories/:id" component={ProductsIndexContainer} />
       <Route exact path="/development/" component={uhOh} />
       <Redirect to='/' />
     </Switch>

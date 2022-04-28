@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.id],
   categories: Object.values(state.entities.categories),
   products: Object.values(state.entities.products),
-  categoryId: ownProps.match.params.categoryId
+  categoryId: ownProps.match.params.id
 });
 
 const mapDispatchToProps = dispatch => {

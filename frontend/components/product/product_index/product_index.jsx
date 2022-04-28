@@ -14,7 +14,8 @@ class ProductIndex extends React.Component {
   }
 
   render() {
-    const products = this.props.products;
+    console.log(this.props.categoryId);
+    const products = this.props.products.filter(product => product.category_id == this.props.categoryId);
     
     return (
       <div className="Products_Card_Map_container">
