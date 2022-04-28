@@ -22,12 +22,12 @@ export const deleteReview = (reviewId) => {
   })
 }
 
-  // export const fetchAllReviews = () => {
-  //   return $.ajax({
-  //     method: "GET",
-  //     url: '/api/reviews'
-  //   })
-  // }
+// export const fetchAllReviews = () => {
+//   return $.ajax({
+//     method: "GET",
+//     url: '/api/reviews'
+//   })
+// }
   
   // export const fetchReview = (reviewId) => {
   //   return $.ajax({

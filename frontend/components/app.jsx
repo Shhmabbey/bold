@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch, Redirect } from 'react-router'
 
 import HomepageContainer from "./homepage/homepage_container";
+import CartContainer from "./cart/cart_container";
 import Modal from './modal/modal';
 import ProductsIndexContainer from "./product/product_index/product_index_container";
 import ProductShowContainer from "./product/product_show/product_show_container"
@@ -18,6 +19,7 @@ const App = () => (
       <Route exact path="/" component={GreetingContainer} />
       <Route exact path="/products/:id" component={ProductShowContainer} />
       <Route exact path="/categories/:id" component={ProductsIndexContainer} />
+      <Route exact path="/cart/" component={CartContainer} />
       <Route exact path="/development/" component={uhOh} />
       <Redirect to='/' />
     </Switch>

@@ -14,7 +14,7 @@ const reviewsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_PRODUCT:
-      return action.product.reviews
+      return action.product.reviews || {}
     case RECEIVE_REVIEW:
       nextState[action.review.review.id] = action.review.review
       return nextState
