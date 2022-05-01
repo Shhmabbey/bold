@@ -1,7 +1,7 @@
 import * as ReviewsUtil from "../util/reviews_util";
 
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
-export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS";
+// export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS";
 export const UPDATE_REVIEW = "UPDATE_REVIEW";
 export const DELETE_REVIEW = "DELETE_REVIEW";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";

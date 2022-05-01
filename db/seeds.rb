@@ -8,14 +8,16 @@ Product.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('products')
 Review.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('reviews')
-# Cart.destroy_all
-# ActiveRecord::Base.connection.reset_pk_sequence!('carts')
-# CartProduct.destroy_all
-# ActiveRecord::Base.connection.reset_pk_sequence!('Cart_products')
+Cart.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('carts')
+CartProduct.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('cart_products')
 
 
 # USER SEEDS
 demo = User.create!(first_name: 'Demo', last_name: 'User', email: 'demo@email.com', password: 'password')
+Cart.create!(user_id: demo.id)
+
 14.times do |i|
   user = User.create!(
     first_name: Faker::Name.first_name,
@@ -23,12 +25,13 @@ demo = User.create!(first_name: 'Demo', last_name: 'User', email: 'demo@email.co
     email: Faker::Internet.email,
     password: Faker::Internet.password(min_length: 6, max_length: 14, mix_case: true, special_characters: true)
   )
+  Cart.create!(user_id: user.id)
 end
 # END
 
 womens = Category.create!( title: 'Women', parent_category_id:  nil )
 mens = Category.create!( title: 'Men', parent_category_id:  nil )
-pets =Category.create!( title: 'Pets', parent_category_id:  nil )
+pets = Category.create!( title: 'Pets', parent_category_id:  nil )
 
 
 
