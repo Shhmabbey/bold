@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import ProductDetail from '../product_show/product_detail';
 import ProductIndexCard from './product_index_card';
 
 class ProductIndex extends React.Component {
@@ -10,11 +8,10 @@ class ProductIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllProducts()
+    this.props.fetchAllProducts();
   }
 
   render() {
-    console.log(this.props.categoryId);
     const products = this.props.products.filter(product => product.category_id == this.props.categoryId);
     
     return (

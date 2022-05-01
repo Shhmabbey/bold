@@ -1,25 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCart, fetchCartProducts } from '../../actions/cart_actions';
+import { CartProductCard } from "./cart_product_card";
+import { fetchAllProducts } from '../../actions/product_actions';
 
-export const Cart = props => {
+
+export const Cart = () => {
+  const dispatch = useDispatch();
+
+  const { userId, cart, cartProducts, products } = useSelector(
+    state => ({
+      userId: state.session.id,
+      cart: state.entities.cart,
+      cartProducts: Object.values(state.entities.cartProducts),
+      products: state.entities.products
+    })
+  );
+
+  useEffect(() => {
+    dispatch(fetchCart(userId, cart.id));
+    dispatch(fetchAllProducts());
+    // dispatch(fetchCartProducts(cart.id));
+  }, [dispatch])
 
   return (
     <div>
       <div>
-        <h1>Cart: 1 Item</h1>
+        <h1>Cart: {cartProducts.length} Items</h1>
         <div>
-          Estimated Delivery: May 02 - May 05 with Standard Shipping
+          Estimated Delivery: 5 - 7 Business Days with Standard Shipping
         </div>
-        <div>
-          <div>
-            image
-          </div>
-          <div>
-            <div>Product Title</div>
-            <div>$30</div>
-            <div>Quantity</div>
-            <div>remove</div>
-          </div>
-        </div>
+        {
+          (products && cartProducts) ?
+            cartProducts.map((cartProduct) => <CartProductCard key={cartProduct.id} payload={({cartProduct: cartProduct, product: products[cartProduct.product_id] } )} />)
+            : null
+        }
       </div>
       <div>
         <div>
