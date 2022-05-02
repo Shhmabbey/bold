@@ -1,15 +1,8 @@
-import React from 'react';
-// import {
-//   IoChevronBackCircleOutline,
-//   IoChevronForwardCircleOutline
-// } from "react-icons/io5";
+import React, { useState } from 'react';
 
 const ProductPhotoDisplay = ( product ) => {
   if (!product.product.photoUrls) return null;
-
-  let index = 0;
-  // let displayOne = 1;
-  // let defaultImage = product.photoUrls[index];
+  const [index, setIndex] = useState(0);
   let photos = product.product.photoUrls
 
     return (
@@ -21,7 +14,7 @@ const ProductPhotoDisplay = ( product ) => {
                 <div
                 className="Thumbnail"
                 key={idx}
-                onClick={() => { index ++ }}
+                onClick={() => { setIndex(idx); console.log(index) }}
                 >
                   <img src={photoUrl} alt={product.product.title}/>
                 </div>
@@ -30,9 +23,13 @@ const ProductPhotoDisplay = ( product ) => {
           </div>
           <div className="Product_Photos">
             <div className="Product_Photos_Separator">
-              {/* <button className="Toggle_Left_Button" onClick={ index -- }><IoChevronBackCircleOutline /></button> */}
+              {/* <div className="Toggle_Left_Button" onClick={() => setIndex(index - 1)}>
+                <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-left-arrows-those-icons-lineal-those-icons-3.png" />
+              </div> */}
               <img className="Product_Photo" src={photos[index]} alt={product.product.title} />
-              {/* <button className="Toggle_Right_Button" onClick={index ++ }><IoChevronForwardCircleOutline /></button> */}
+              {/* <div className="Toggle_Right_Button" onClick={() => setIndex(index + 1) }>
+                <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-right-arrows-those-icons-lineal-those-icons-5.png" />
+              </div> */}
             </div>
           </div>
         </div>

@@ -52,9 +52,9 @@ class ProductShow extends React.Component {
     const { openReviewModal, product, currentUser, deleteReview, categories, createCartProduct, cartId } = this.props;
 
     return (
+        // <div>{categories[product.category_id].title}</div>
       <div className="Product_Show_Grid">
         <div className="Product_Show_Main">
-          <div>{categories[product.category_id].title}</div>
           <ProductPhotoDisplay product={product}/>
           <div className="Detail_Labels">
             <h3 className="Tab">Details</h3>

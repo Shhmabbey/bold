@@ -15,8 +15,9 @@ export const CartProductCard = (props) => {
       dispatch(editCartProduct(cartProduct.cart_id, cartProduct));
     }
   }
-  
+
   if (!product) return null;
+  
   return (
     <div className="cart__card">
       <Link to={`/products/${product.id}`} className="Product_Image" >
@@ -34,13 +35,27 @@ export const CartProductCard = (props) => {
             <div className="cart__card__details__actions__center"></div>
               <div className="cart__card__details__actions__center__contents">
                 <div className="cart__card__details__actions__center__contents__quantity">
-                <div className="cart__card__details__actions__center__contents__quantity__quantity-button" onClick={() => updateQuantity("subtract")}>-</div>
+                <div className="cart__card__details__actions__center__contents__quantity__quantity-button" 
+                  onClick={
+                    (cartProduct.quantity > 1) ?
+                      () => updateQuantity("subtract") : 
+                      () => dispatch(deleteCartProduct(cartProduct.cart_id, cartProduct.id))
+                    } 
+                >-</div>
                   <div className="cart__card__details__actions__center__contents__quantity__quantity">{cartProduct.quantity}</div>
-                <div className="cart__card__details__actions__center__contents__quantity__quantity-button" onClick={() => updateQuantity("add")}>+</div>
+                <div className="cart__card__details__actions__center__contents__quantity__quantity-button" 
+                  onClick={() => updateQuantity("add")}>+</div>
                 </div>
                 <div className="cart__card__details__delete">
-                  <img src="https://italic.com/static/icons/clear-x.svg" alt="delete product" className="cart__card__details__delete__button" onClick={() => dispatch(deleteCartProduct(cartProduct.cart_id, cartProduct.id))} />
-                <div className="cart__card__details__delete__link" onClick={() => dispatch(deleteCartProduct(cartProduct.cart_id, cartProduct.id))} >Remove</div>
+                  <img src="https://italic.com/static/icons/clear-x.svg" 
+                    alt="delete product" 
+                    className="cart__card__details__delete__button" 
+                    onClick={() => 
+                    dispatch(deleteCartProduct(cartProduct.cart_id, cartProduct.id))
+                    } />
+                  <div className="cart__card__details__delete__link" 
+                    onClick={() => dispatch(deleteCartProduct(cartProduct.cart_id, cartProduct.id))}
+                  >Remove</div>
                 </div>
               </div>
           </div>

@@ -210,23 +210,23 @@
   right: 0;
   left: 0;
 
-  &:after {
-  content: "";
-  display: block;
-  transform: scale(0);
-  margin-bottom: -2px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #171722;
-  transition: 0.2s ease-in-out;
-}
+//   &:after {
+//   content: "";
+//   display: block;
+//   transform: scale(0);
+//   margin-bottom: -2px;
+//   padding-bottom: 12px;
+//   border-bottom: 2px solid #171722;
+//   transition: 0.2s ease-in-out;
+// }
 
-&:hover:after {
-  content: "";
-  color: #171722;
-  display: block;
-  transform: scale(1);
-  transition: 0.2s ease-in;
-}
+// &:hover:after {
+//   content: "";
+//   color: #171722;
+//   display: block;
+//   transform: scale(1);
+//   transition: 0.2s ease-in;
+// }
 }
 
 .Category_Path {
@@ -491,6 +491,7 @@
 #Review_Submit{
   width: 30%;
   text-align: center;
+  cursor: pointer;
 }
 
 #submit_edit{
@@ -619,8 +620,6 @@
   font-size: 16px;
   line-height: 28px;
   margin-top: 12px
-  
-
 }
 
 .Review_Form_Body_Discription {
@@ -634,6 +633,7 @@
   border: 0;
   font: inherit;
   text-align: center;
+  padding-bottom: 30px;
 
   p {
     font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;

@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ReviewCard = ({ review, currentUser, product, openReviewModal} ) => {
+  const [helpful, setHelpful] = useState(review.helpful);
+  const [notVoted, didVote] = useState(true);
+
   return (
     <div key={review.id} className="Review_Card_Container" >
       <div className="Review_content">
@@ -42,9 +45,9 @@ const ReviewCard = ({ review, currentUser, product, openReviewModal} ) => {
       <div className="Helpful">
         <div className="Helpful_One">
           <div className="Helpful_Two">
-            <div className="Review_Button" role="button" tabIndex="0">
+            <div className="Review_Button" role="button" tabIndex="0" onClick={(notVoted) ? () => { didVote(false); setHelpful(helpful + 1) } : () => { didVote(true); setHelpful(helpful - 1) }} >
               <span className="Review_Button_Text">Helpful</span>
-              <span className="Helpful_Score">{review.helpful}</span>
+              <span className="Helpful_Score">{helpful}</span>
             </div>
               { currentUser ? (
                 (currentUser.id === review.reviewer_id) ? (

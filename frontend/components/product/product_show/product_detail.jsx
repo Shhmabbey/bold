@@ -1,20 +1,42 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { createCartProduct } from '../../../actions/cart_actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { createCartProduct, editCartProduct } from '../../../actions/cart_actions';
 
 const ProductDetail = ({ product, reviews, cartId}) => {
+  const dispatch = useDispatch();
+
   let productId = product.id;
-  const [cartProduct, setCartProduct] = useState({
+  let  cartProduct = {
     product_id: productId,
     quantity: 1,
     cart_id: cartId
-  });
+  };
+
+  const { cartProducts } = useSelector(
+    state => ({
+      cartProducts: Object.values(state.entities.cartProducts)
+    })
+  );
+
+  function addProduct() {
+    for (let i = 0; i < cartProducts.length; i++) {
+      let cartedProduct = cartProducts[i];
+      if (cartedProduct.product_id === cartProduct.product_id) {
+        cartedProduct.quantity += 1;
+        dispatch(editCartProduct(cartId, cartedProduct))
+        break
+      }
+      if ((cartedProduct.product_id !== cartProduct.product_id) && i === (cartProducts.length - 1)) {dispatch(createCartProduct(cartId, cartProduct))}
+    }
+    if (cartProducts.length === 0) dispatch(createCartProduct(cartId, cartProduct));
+  }
 
   let ratingSum = 0.0;
   reviews.forEach(review => {
     ratingSum += review.rating
   })
-  let reviewAverage = (ratingSum / reviews.length) || "Not yet reviewed.";
+  let reviewAverage = Math.round((ratingSum / reviews.length) * 10) / 10 || "Not yet reviewed.";
 
   return (
     <div className="product_display">
@@ -40,8 +62,7 @@ const ProductDetail = ({ product, reviews, cartId}) => {
       <div className="product_display_price">
         <h4>${product.price}0</h4>
       </div>
-      {/* <Link to="/cart/" className="button">Add to Cart</Link> */}
-      <button onClick={() => dispatch(createCartProduct(cartId, cartProduct))}>Add to Cart</button>
+      <button onClick={ addProduct }>Add to Cart</button>
     </div>
   );
 };
