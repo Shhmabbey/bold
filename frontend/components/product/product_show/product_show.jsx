@@ -11,7 +11,9 @@ class ProductShow extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchProduct(this.props.match.params.id);
-    this.props.fetchCart(this.props.currentUser.id, this.props.cartId);
+    if (this.props.currentUser) {
+      this.props.fetchCart(this.props.currentUser.id, this.props.cartId);
+    }
   }  
 
   reviewProduct(openReviewModal, product, currentUser) {
@@ -49,7 +51,7 @@ class ProductShow extends React.Component {
   render(){
     if (!this.props.product || !this.props.reviews || !this.props.categories) return null;
     const reviews = Object.values(this.props.reviews);
-    const { openReviewModal, product, currentUser, deleteReview, categories, createCartProduct, cartId } = this.props;
+    const { openReviewModal, product, currentUser, deleteReview, cartId } = this.props;
 
     return (
         // <div>{categories[product.category_id].title}</div>
