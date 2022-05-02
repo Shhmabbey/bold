@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createCartProduct, editCartProduct } from '../../../actions/cart_actions';
+import { openModal, closeModal } from '../../../actions/modal_actions';
 
 const ProductDetail = ({ product, reviews, cartId}) => {
   const dispatch = useDispatch();
@@ -20,16 +21,20 @@ const ProductDetail = ({ product, reviews, cartId}) => {
   );
 
   function addProduct() {
-    for (let i = 0; i < cartProducts.length; i++) {
-      let cartedProduct = cartProducts[i];
-      if (cartedProduct.product_id === cartProduct.product_id) {
-        cartedProduct.quantity += 1;
-        dispatch(editCartProduct(cartId, cartedProduct))
-        break
+    if (!cartId) { 
+      dispatch(openModal({ modal: 'Login' }))
+    } else {
+      for (let i = 0; i < cartProducts.length; i++) {
+        let cartedProduct = cartProducts[i];
+        if (cartedProduct.product_id === cartProduct.product_id) {
+          cartedProduct.quantity += 1;
+          dispatch(editCartProduct(cartId, cartedProduct))
+          break
+        }
+        if ((cartedProduct.product_id !== cartProduct.product_id) && i === (cartProducts.length - 1)) {dispatch(createCartProduct(cartId, cartProduct))}
       }
-      if ((cartedProduct.product_id !== cartProduct.product_id) && i === (cartProducts.length - 1)) {dispatch(createCartProduct(cartId, cartProduct))}
+      if (cartProducts.length === 0) dispatch(createCartProduct(cartId, cartProduct));
     }
-    if (cartProducts.length === 0) dispatch(createCartProduct(cartId, cartProduct));
   }
 
   let ratingSum = 0.0;
