@@ -9,6 +9,7 @@ import ProductsIndexContainer from "./product/product_index/product_index_contai
 import ProductShowContainer from "./product/product_show/product_show_container"
 import GreetingContainer from "./homepage/greeting/greeting_container";
 import UhOh from "./homepage/under_development";
+import SearchResults from "./search/search_results";
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
       <Route exact path="/products/:id" component={ProductShowContainer} />
       <Route exact path="/categories/:id" component={ProductsIndexContainer} />
       <ProtectedRoute exact path="/cart/" component={Cart} />
+      <Route exact path="/search/:id" component={SearchResults} />
       <Route exact path="/development/" component={UhOh} />
       <Redirect to='/' />
     </Switch>

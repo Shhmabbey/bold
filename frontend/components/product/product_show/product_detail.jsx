@@ -67,7 +67,9 @@ const ProductDetail = ({ product, reviews, cartId}) => {
       <div className="product_display_price">
         <h4>${product.price}0</h4>
       </div>
-      <button onClick={ addProduct }>Add to Cart</button>
+      <a href={`#/cart/`} >
+        <button onClick={ addProduct }>Add to Cart</button>
+      </a>
     </div>
   );
 };
