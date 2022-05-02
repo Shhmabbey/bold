@@ -13,7 +13,7 @@ class Banner extends React.Component {
         </div>
         <div className="Center_Banner">
           <p className="Banner_Text" >Like what you see?</p>
-          <a className="Banner_button" href="https://github.com/Shhmabbey" target="_blank">Checkout what I'm working on.</a>
+          <a className="Banner_button" href="https://github.com/Shhmabbey" target="_blank">Checkout what I'm working on</a>
           <a className="Banner_button" href="https://www.linkedin.com/in/abigail-rose-hernandez/" target="_blank">View my work history</a>
         </div>
         <div className="banner-right">

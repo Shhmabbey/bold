@@ -23,7 +23,6 @@ class EditReviewForm extends React.Component {
   }
 
   handleSubmit(e) {
-    alert('Update Recieved.');
     e.preventDefault();
     const review = Object.assign({}, this.state);
     this.props.action(review).then(this.props.closeModal);
