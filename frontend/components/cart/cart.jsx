@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCart, fetchCartProducts } from '../../actions/cart_actions';
+import { fetchCart } from '../../actions/cart_actions';
 import { CartProductCard } from "./cart_product_card";
 import { fetchAllProducts } from '../../actions/product_actions';
 
@@ -20,15 +20,22 @@ export const Cart = () => {
   useEffect(() => {
     dispatch(fetchCart(userId, cart.id));
     dispatch(fetchAllProducts());
-    // dispatch(fetchCartProducts(cart.id));
   }, [dispatch])
 
   return (
-    <div>
-      <div>
-        <h1>Cart: {cartProducts.length} Items</h1>
-        <div>
-          Estimated Delivery: 5 - 7 Business Days with Standard Shipping
+    <div className="cart" >
+      <div className="cart__left" >
+        <div className="item" >
+          <div className="item__cart" >Cart:</div>
+          {
+            (cartProducts.length === 1) ? 
+              <div className="item__count" >1 item</div> : 
+              <div className="item__count" >{cartProducts.length} items</div>
+          }
+        </div>
+        <div className="delivery" >
+          <div className="delivery__bold" >Estimated Delivery:</div>
+          <div className="delivery__date" >Estimated Delivery: 5 - 7 Business Days with Standard Shipping</div>
         </div>
         {
           (products && cartProducts) ?
@@ -36,7 +43,7 @@ export const Cart = () => {
             : null
         }
       </div>
-      <div>
+      <div className="cart__right">
         <div>
           <button>Proceed to Checkout</button>
         </div>
