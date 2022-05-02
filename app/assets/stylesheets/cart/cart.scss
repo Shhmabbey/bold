@@ -1,6 +1,6 @@
 .cart {
-  margin-left: 12%;
-  margin-right: 12%;
+  margin-left: 13%;
+  margin-right: 13%;
   padding-left: 100px;
   padding-right: 100px;
   display: flex;
@@ -16,7 +16,7 @@
   }
 
   &__right {
-    width: 375px;
+    width: 415px;
     padding-top: 30px;
     padding-bottom: 30px;
     flex-direction: column;
@@ -24,6 +24,7 @@
   }
 }
 
+// left side of cart container
 .item {
   padding-top: 30px;
   padding-bottom: 5px;
@@ -88,8 +89,8 @@
     border-radius: 3px;
     overflow: hidden;
     align-self: flex-start;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     margin-right: 20px;
   }
 
@@ -254,6 +255,78 @@
           transition: 0.2s ease-in;
         }
       }
+    }
+  }
+}
+
+// right side of cart container
+
+.checkout {
+  top: 35px;
+  position: sticky;
+  border:1px solid rgba(234,234,234, 1);
+  border-radius: 5px;
+  margin-left: -20px;
+  margin-right: -20px;
+  --tw-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  cursor: pointer;
+}
+
+.checkout__contents {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: rgba(0,0,0,1);
+  padding-left: 25px;
+  padding-right: 25px;
+  flex-direction: column;
+  display: flex;
+  font-size: 14px;
+  font-family: inter,basis-grotesque,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  line-height: 160%;
+  font-weight: 500;
+
+  &__button {
+    order: 2;
+    color: rgba(255,255,255,1);
+    line-height: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(0,0,0,1);
+    border-radius: 3px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__details {
+    order: 4;
+    font-size: 14px;
+    font-family: inter,basis-grotesque,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    line-height: 160%;
+    font-weight: 500;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top:1px solid rgba(234,234,234, 1);
+    flex-direction: column;
+    display: flex;
+    margin-bottom: 20px;
+    
+    &__line {
+      color: rgba(85,85,85,1);
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      margin-bottom: 10px;
+    }
+    
+    &__border {
+      border-bottom:1px solid rgba(234,234,234, 1);
+      margin-bottom: 10px;
     }
   }
 }
