@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCart } from '../../actions/cart_actions';
 import { CartProductCard } from "./cart_product_card";
 import { fetchAllProducts } from '../../actions/product_actions';
-
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 export const Cart = () => {
   const dispatch = useDispatch();
@@ -56,7 +56,8 @@ export const Cart = () => {
       <div className="cart__right">
         <div className="checkout">
           <div className="checkout__contents">
-            <button className="checkout__contents__button" >Proceed to Checkout</button>
+            {/* <button className="checkout__contents__button" onClick={() => alert('Thank you for notifying us.')} >Proceed to Checkout</button> */}
+            <button className="checkout__contents__button" onClick={() => dispatch(openModal({ modal: 'Sendoff' }))} >Proceed to Checkout</button>
             <div className="checkout__contents__details">
               <div className="checkout__contents__details__line">
                 <div>Subtotal</div>
