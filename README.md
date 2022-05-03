@@ -7,24 +7,24 @@ Bold is a clone of the e-commerce website, Italic.com. [View bold here](https://
 1. [Features](#features)
 2. [Technologies](#technologies)
 3. [Featured Code](#featured-code)
-4.  [Future Features](#future-features)
+4. [Future Features](#future-features)
 
 ## Features
 <p>Sign In or Register</p>
 <div id="header" align="left">
-  <img src=""/>
+  <img src="https://user-images.githubusercontent.com/50922953/166556440-3b1375b2-120a-4b03-9768-0be2d385b41a.png"/>
 </div>
 <p>Search for Products or View by Category</p>
 <div id="header" align="left">
-  <img src=""/>
+  <img src="https://user-images.githubusercontent.com/50922953/166555817-77bcf85c-8cf8-4c74-ba6c-760184a103c9.png"/>
 </div>
 <p>Edit Cart Items</p>
 <div id="header" align="left">
-  <img src=""/>
+  <img src="https://user-images.githubusercontent.com/50922953/166556002-19019459-e906-4256-badd-e129e8e2cc5f.png"/>
 </div>
 <p>Create, Edit, or Delete Reviews</p>
 <div id="header" align="left">
-  <img src=""/>
+  <img src="https://user-images.githubusercontent.com/50922953/166556099-f470c3d2-9b01-4550-a2a2-47532d8f5882.png"/>
 </div>
 
 ## Technologies
