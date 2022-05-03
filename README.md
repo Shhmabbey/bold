@@ -12,7 +12,7 @@ Bold is a clone of the e-commerce website, Italic.com. [View bold here](https://
 ## Features
 <p>Sign In or Register</p>
 <div id="header" align="left">
-  <img src="https://user-images.githubusercontent.com/50922953/166555506-f6b87c0c-e8ea-41b7-9934-2d798c4b4d22.png"/>
+  <img src="https://user-images.githubusercontent.com/50922953/166556440-3b1375b2-120a-4b03-9768-0be2d385b41a.png"/>
 </div>
 <p>Search for Products or View by Category</p>
 <div id="header" align="left">
