@@ -14,7 +14,7 @@ const ProductPhotoDisplay = ( product ) => {
                 <div
                 className="Thumbnail"
                 key={idx}
-                onClick={() => { setIndex(idx); console.log(index) }}
+                onClick={() => { setIndex(idx) }}
                 >
                   <img src={photoUrl} alt={product.product.title}/>
                 </div>
