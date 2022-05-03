@@ -7,7 +7,7 @@ Bold is a clone of the e-commerce website, Italic.com. [View bold here](https://
 1. [Features](#features)
 2. [Technologies](#technologies)
 3. [Featured Code](#featured-code)
-4.  [Future Features](#future-features)
+4. [Future Features](#future-features)
 
 ## Features
 <p>Sign In or Register</p>
