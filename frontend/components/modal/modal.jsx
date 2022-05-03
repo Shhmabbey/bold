@@ -5,6 +5,7 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import ReviewFormContainer from '../product/product_show/reviews/review_form_container';
 import EditReviewFormContainer from '../product/product_show/reviews/edit_review_form_container';
+import { Sendoff } from '../sendoff/sendoff';
 
 
 function Modal({modal, closeModal}) {
@@ -25,6 +26,9 @@ function Modal({modal, closeModal}) {
       break;
     case 'Edit Review':
       component = <EditReviewFormContainer />
+      break;
+    case 'Sendoff':
+      component = <Sendoff />
       break;
     default:
       return null;
