@@ -23,7 +23,9 @@ export const Cart = () => {
   }, [dispatch])
 
   let total = 0;
+  let sum = 0;
   cartProducts.forEach((cartProduct) => {
+    sum += (cartProduct.quantity);
     let product = products[cartProduct.product_id];
     if (product) {
       total += (product.price * cartProduct.quantity);
@@ -36,9 +38,9 @@ export const Cart = () => {
         <div className="item" >
           <div className="item__cart" >Cart:</div>
           {
-            (cartProducts.length === 1) ? 
+            (sum === 1) ? 
               <div className="item__count" >1 item</div> : 
-              <div className="item__count" >{cartProducts.length} items</div>
+              <div className="item__count" >{ sum } items</div>
           }
         </div>
         <div className="delivery" >
