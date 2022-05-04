@@ -10,21 +10,21 @@ Bold is a clone of the e-commerce website, Italic.com. [View bold here](https://
 4. [Future Features](#future-features)
 
 ## Features
-<p>Sign In or Register</p>
+<h3>Sign In or Register</h3>
 <div id="header" align="left">
-  <img src="https://media.giphy.com/media/zgMPYYgZXuz7EKquJ2/giphy.gif"/>
+  <img width="900" src="https://media.giphy.com/media/zgMPYYgZXuz7EKquJ2/giphy.gif"/>
 </div>
-<p>Search for Products or View by Category</p>
+<h3>Search for Products or View by Category</h3>
 <div id="header" align="left">
-  <img src="https://media.giphy.com/media/VT9xAIZlcK7kdcCMZ3/giphy.gif"/>
+  <img  width="900" src="https://media.giphy.com/media/VT9xAIZlcK7kdcCMZ3/giphy.gif"/>
 </div>
-<p>Edit Cart Items</p>
+<h3>Edit Cart Items</h3>
 <div id="header" align="left">
-  <img src="https://media.giphy.com/media/sckTOlXQOdhvirmwuI/giphy.gif"/>
+  <img  width="900" src="https://media.giphy.com/media/2vsExGkYilRAot5N3h/giphy.gif"/>
 </div>
-<p>Create, Edit, or Delete Reviews</p>
+<h3>Create, Edit, or Delete Reviews</h3>
 <div id="header" align="left">
-  <img src="https://media.giphy.com/media/Tv3zcRb6MFh6QGdA4w/giphy.gif"/>
+  <img width="900" src="https://media.giphy.com/media/Tv3zcRb6MFh6QGdA4w/giphy.gif"/>
 </div>
 
 ## Technologies
