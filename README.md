@@ -12,19 +12,19 @@ Bold is a clone of the e-commerce website, Italic.com. [View bold here](https://
 ## Features
 <p>Sign In or Register</p>
 <div id="header" align="left">
-  <img src="https://user-images.githubusercontent.com/50922953/166556440-3b1375b2-120a-4b03-9768-0be2d385b41a.png"/>
+  <img src="https://media.giphy.com/media/zgMPYYgZXuz7EKquJ2/giphy.gif"/>
 </div>
 <p>Search for Products or View by Category</p>
 <div id="header" align="left">
-  <img src="https://user-images.githubusercontent.com/50922953/166555817-77bcf85c-8cf8-4c74-ba6c-760184a103c9.png"/>
+  <img src="https://media.giphy.com/media/VT9xAIZlcK7kdcCMZ3/giphy.gif"/>
 </div>
 <p>Edit Cart Items</p>
 <div id="header" align="left">
-  <img src="https://user-images.githubusercontent.com/50922953/166556002-19019459-e906-4256-badd-e129e8e2cc5f.png"/>
+  <img src="https://media.giphy.com/media/sckTOlXQOdhvirmwuI/giphy.gif"/>
 </div>
 <p>Create, Edit, or Delete Reviews</p>
 <div id="header" align="left">
-  <img src="https://user-images.githubusercontent.com/50922953/166556099-f470c3d2-9b01-4550-a2a2-47532d8f5882.png"/>
+  <img src="https://media.giphy.com/media/Tv3zcRb6MFh6QGdA4w/giphy.gif"/>
 </div>
 
 ## Technologies
