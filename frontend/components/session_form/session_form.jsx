@@ -127,7 +127,7 @@ class SessionForm extends React.Component {
     return (
       <div className="Session_Form_Container">
         <div role="button" tabIndex="0" className="Close_Button">
-          <img onClick={() => closeModal()} src="https://italic.com/static/icons/close.svg" height="10" width="10" className="Close" alt="close"/>
+          <img onClick={() => closeModal()} src="../../app/assets/images/close.png" height="10" width="10" className="Close" alt="close"/>
         </div>
         <div>
           <p className="Login_Header">Login or Register</p>
