@@ -20,10 +20,10 @@ Cart.create!(user_id: demo.id)
 
 14.times do |i|
   user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: Faker::Internet.password(min_length: 6, max_length: 14, mix_case: true, special_characters: true)
+    first_name: "first_name",
+    last_name: "last_name",
+    email: "email",
+    password: "Password1234*"
   )
   Cart.create!(user_id: user.id)
 end
@@ -192,12 +192,11 @@ rand(20..30).times do |i|
   product = Product.order("RANDOM()").first
 
   review = product.reviews.create!(
-    title: Faker::TvShows::RickAndMorty.quote,
-    body: Faker::Hipster.paragraph(sentence_count: 2, supplemental: true),
-    rating: Faker::Number.between(from: 1, to: 5),
+    title: "Title Sample",
+    body: "Body Sample",
+    rating: "1",
     reviewer_id: User.order("RANDOM()").first.id,
     product_id: product.id,
-    helpful: Faker::Number.between(from: 0, to: 3),
-    # title: Faker::Hipster.sentence(10),
+    helpful: "1"
   )
 end
