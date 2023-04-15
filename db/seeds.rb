@@ -22,7 +22,7 @@ Cart.create!(user_id: demo.id)
   user = User.create!(
     first_name: "first_name",
     last_name: "last_name",
-    email: "email",
+    email: i.to_s + "@email.com",
     password: "Password1234*"
   )
   Cart.create!(user_id: user.id)
