@@ -41,7 +41,7 @@ Bold is primarily built with the a combination of following four technologies:
   <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/postgresql/postgresql.png" title="PosgreSQL" alt="postgreSQL" width="40" height="40"/>&nbsp;
 
 ## Featured Code
-Edit item quantities or delete items within cart.
+Update cart item quantities or delete items within the cart show page.
 ```js
   // update quantity in cart function
   const updateQuantity = (field) => {
@@ -81,7 +81,7 @@ Edit item quantities or delete items within cart.
 </div>
 ```
 
-Simple Implementation of Intuitive Photo Display
+Toggle easily between different images for any given product.
  ```js
 <div className="Outter_Photos_Container">
   <div className="Inner_Photos_Container">
