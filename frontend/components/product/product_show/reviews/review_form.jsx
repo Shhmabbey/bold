@@ -52,6 +52,15 @@ class ReviewForm extends React.Component {
     )
   }
 
+  getDate() {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    const yyyy = today.getFullYear();
+
+    return `${mm}/${dd}/${yyyy}`;
+  }
+
   render() {
     const { formType, closeModal, product } = this.props;
     const create = (formType === "Review");
@@ -74,7 +83,7 @@ class ReviewForm extends React.Component {
               <div className="Review_Form_Body_Right_Context">
                 <h3>{ product.title }</h3>
                 <p>
-                  Purchased on Mar 17, 2022
+                  Purchased on {this.getDate()}
                 </p>
               </div>
               {/* <div className="Review_Form_Body_Right_Rate"> */}
