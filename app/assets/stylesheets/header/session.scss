@@ -53,17 +53,12 @@ button:hover,
 .Close_Button {
   cursor: pointer;
   box-sizing: border-box;
-
-  img {
-    width: 10px;
-    height: 10px;
-    z-index: 20;
-    top: 1.75rem;
-    right: 25px;
-    position: absolute;
-    max-width: 100%;
-    display: block;
-  }
+  z-index: 20;
+  top: 1.75rem;
+  right: 25px;
+  position: absolute;
+  max-width: 100%;
+  display: block;
 }
 
 p {

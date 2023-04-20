@@ -58,8 +58,8 @@ class ReviewForm extends React.Component {
     return (
       <div className="Review_Form">
         <form onSubmit={this.handleSubmit} className="Review_Form_Box">
-          <div role="button" tabIndex="0" className="Close_Button">
-            <img onClick={() => closeModal()} src="https://italic.com/static/icons/close.svg" height="10" width="10" className="Close" alt="close" />
+          <div role="button" tabIndex="0" className="Close_Button" onClick={() => closeModal()}>
+            ×
           </div>
           <div className="Review_Form_Header">
             <div className="Review_Form_Header_Content">
