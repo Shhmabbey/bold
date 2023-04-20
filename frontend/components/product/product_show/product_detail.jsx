@@ -47,11 +47,9 @@ const ProductDetail = ({ product, reviews, cartId}) => {
     <div className="product_display">
       <div className="product_display_title">
         <div className="Star">
-          <span className="One">
-            <span className="Two" >
-              <img alt="Rating Star" src="https://italic.com/_next/image?url=%2Fstatic%2Ficons%2Fstar.svg&w=16&q=80" />
-            </span>
-          </span>
+          <svg className="Review_Svg" viewBox="0 0 12 11" fill="blacklight" xmlns="http://www.w3.org/2000/svg" width="9px">
+            <path d="M9.085 10.749a.357.357 0 01-.21-.067L6.006 8.6l-2.87 2.08a.357.357 0 01-.548-.403l1.12-3.316-2.902-1.99a.357.357 0 01.201-.651h3.58L5.665.997a.357.357 0 01.679 0l1.08 3.325h3.58a.357.357 0 01.202.652L8.304 6.962l1.119 3.315a.357.357 0 01-.338.472z" fill="#171722"></path>
+          </svg>
           <p className="Review_Average">{reviewAverage}</p>
           <p className="Review_Count">({reviews.length} reviews)</p>
         </div>
