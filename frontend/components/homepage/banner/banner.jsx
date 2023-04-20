@@ -13,8 +13,8 @@ class Banner extends React.Component {
         </div>
         <div className="Center_Banner">
           <p className="Banner_Text" >Like what you see?</p>
-          <a className="Banner_button" href="https://github.com/Shhmabbey" target="_blank">Checkout what I'm working on</a>
-          <a className="Banner_button" href="https://www.linkedin.com/in/abigail-rose-hernandez/" target="_blank">View my work history</a>
+          <a className="Banner_button" href="https://github.com/Shhmabbey" target="_blank">Checkout my work on Github</a>
+          <a className="Banner_button" href="https://www.linkedin.com/in/san-francisco-software-engineer/" target="_blank">View my LinkedIn</a>
         </div>
         <div className="banner-right">
           <img src="https://italic.com/static/images/banner-right-flower.png" alt="yellow flower"/>

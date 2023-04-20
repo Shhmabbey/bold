@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { FontAwesomeIcon } from '../../../node_modules/@fortawesome/react-fontawesome'
+// import { faEnvelope } from '../../../node_modules/@fortawesome/free-solid-svg-icons'
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -126,8 +128,8 @@ class SessionForm extends React.Component {
     
     return (
       <div className="Session_Form_Container">
-        <div role="button" tabIndex="0" className="Close_Button">
-          <img onClick={() => closeModal()} src="../../app/assets/images/close.png" height="10" width="10" className="Close" alt="close"/>
+        <div role="button" tabIndex="0" className="Close_Button" onClick={() => closeModal()} >
+          ×
         </div>
         <div>
           <p className="Login_Header">Login or Register</p>
