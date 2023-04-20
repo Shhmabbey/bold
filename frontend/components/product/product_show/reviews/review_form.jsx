@@ -98,6 +98,11 @@ class ReviewForm extends React.Component {
                     className="Review_Form_Input"
                   />
                 </div>
+                <div className="rating-input">
+                  <div className="filled" >
+                    <i className="fa fa-paw"></i>
+                  </div>
+                </div>
               {/* </div> */}
             </div>
           </div>

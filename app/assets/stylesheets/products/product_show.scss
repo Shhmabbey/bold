@@ -762,3 +762,15 @@ input[type=number]
   bottom: -1px;
   height: 50%;
 }
+
+// input[type="number"] {
+//   max-width: 30px;
+// }
+
+.rating-input {
+  display: flex;
+  margin-right: 4px;
+  height: 15px;
+  width: 15px;
+  color: black;
+}

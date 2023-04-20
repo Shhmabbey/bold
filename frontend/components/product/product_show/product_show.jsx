@@ -17,6 +17,7 @@ class ProductShow extends React.Component {
   }  
 
   reviewProduct(openReviewModal, product, currentUser) {
+    const { openModal } = this.props;
     return (
       currentUser ? (
         <div className="Float_Right" >
@@ -27,7 +28,16 @@ class ProductShow extends React.Component {
             Leave a Review
           </div>
         </div>
-        ) : null
+        ) : (
+          <div className="Float_Right" >
+            <div
+            className="Create_Review_Link Review_Title"
+            onClick={() => openModal({modal: 'Login'})}
+            >
+            Sign in to Review
+            </div>
+          </div>
+        )
     )
   }
 
