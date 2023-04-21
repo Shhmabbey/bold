@@ -1,59 +1,60 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import ReviewRating from './review_ratings';
+import React, {useEffect, useState} from 'react';
+import { useLocation, withRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { createReview, updateReview } from '../../../../actions/review_actions';
+import { closeModal } from '../../../../actions/modal_actions';
+import 'regenerator-runtime/runtime';
+import { fetchProduct } from '../../../../actions/product_actions';
 
-class ReviewForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      rating: '',
-      title: '',
-      body: '',
-      reviewer_id: this.props.currentUser.id,
-      product_id: this.props.product.id,
-      helpful: 0
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+const ReviewForm = () => {
 
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
+  const pathname = useLocation().pathname
+  const id = +pathname.slice(10)
+  const dispatch = useDispatch();
 
-  handleSubmit(e) {
+  const [rating, setRating] = useState(0);
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+  const [helpful, setHelpful] = useState(0);
+
+  const [hover, setHover] = useState(0);
+
+  const sessionUserId = useSelector(state => state.session.id);
+  const product = useSelector(state => state.entities.products[id]);
+  const errors = useSelector(state => state.errors.reviews);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const review = Object.assign({}, this.state);
-    this.props.action(review).then(this.props.closeModal);
+    const review = {
+      rating,
+      title,
+      body,
+      reviewer_id: sessionUserId,
+      product_id: id,
+      helpful
+    }
+    await dispatch(createReview(review));
+    await dispatch(closeModal());
   }
 
-  componentDidMount() {
-    this.render()
-  }
+  useEffect(() => {
+    dispatch(fetchProduct(id));
+  }, []);
 
-  componentWillUnmount() {
-    this.props.clearReviewErrors();
-  }
-
-  renderErrors() {
-    const { errors } = this.props
+  const renderErrors = () => {
     return (
-      <ul className="session-errors">
-        {(errors.length === 0) ? (
-          null
-        ) : (
-          errors.map((error, i) => (
-            <li key={`error-${i}`} className="error">
-              {error}
-            </li>
-          ))
-        )}
+      <ul>
+        {errors?.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
       </ul>
-    )
-  }
+    );
+  };
 
-  getDate() {
+
+  const getDate = () =>{
     const today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
     const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -62,19 +63,15 @@ class ReviewForm extends React.Component {
     return `${mm}/${dd}/${yyyy}`;
   }
 
-
-  render() {
-    const { formType, closeModal, product } = this.props;
-    const create = (formType === "Review");
-    return (
+  return (
       <div className="Review_Form">
-        <form onSubmit={this.handleSubmit} className="Review_Form_Box">
+        <form onSubmit={handleSubmit} className="Review_Form_Box">
           <div role="button" tabIndex="0" className="Close_Button" onClick={() => closeModal()}>
             ×
           </div>
           <div className="Review_Form_Header">
             <div className="Review_Form_Header_Content">
-              <h1>{create ? "Leave a Review" : "Edit Review"}</h1>
+              <h1>Leave a Review</h1>
             </div>
           </div>
           <div className="Review_Form_Body">
@@ -85,23 +82,28 @@ class ReviewForm extends React.Component {
               <div className="Review_Form_Body_Right_Context">
                 <h3>{ product.title }</h3>
                 <p>
-                  Purchased on {this.getDate()}
+                  Purchased on {getDate()}
                 </p>
               </div>
-              {/* <div className="Review_Form_Body_Right_Rate"> */}
-                <div className="quantity">
-                  <p>Rating: </p>
-                  <label htmlFor="rating"></label>
-                  <input
-                    id="rating"
-                    type="number"
-                    value={this.state.rating}
-                    onChange={this.update("rating")}
-                    className="Review_Form_Input"
-                  />
+              <div className="quantity">
+                <p>Rating: </p>
+                <div className="star-rating">
+                  {[...Array(5)].map((star, index) => {
+                    index += 1;
+                    return (
+                      <div
+                        key={index}
+                        className={index <= (hover || rating) ? "selected" : "unselected"}
+                        onClick={() => setRating(index)}
+                        onMouseEnter={() => setHover(index)}
+                        onMouseLeave={() => setHover(rating)}
+                      >
+                        <i className="fa fa-solid fa-star fa-2x"></i>
+                      </div>
+                    );
+                  })}
                 </div>
-                <ReviewRating/>
-              {/* </div> */}
+              </div>
             </div>
           </div>
           <div className="Review_Form_Body_Discription">
@@ -109,8 +111,8 @@ class ReviewForm extends React.Component {
             <label htmlFor="title"></label>
             <input
               type="text"
-              value={this.state.title}
-              onChange={this.update("title")}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
               className="Review_Form_Input"
             />
             <p>Comment</p>
@@ -118,12 +120,13 @@ class ReviewForm extends React.Component {
             <textarea
               cols="30"
               rows="7"
-              value={this.state.body}
-              onChange={this.update("body")}
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
               className="Review_Form_Input"
             />
-              {this.renderErrors()}
+              {renderErrors()}
             <input
+              id="Review_Submit"
               className="Review_Submit"
               type="submit"
               value="Submit Review"/>
@@ -131,7 +134,6 @@ class ReviewForm extends React.Component {
         </form>
       </div>
     );
- }
 }
 
-export default withRouter(ReviewForm);
+export default ReviewForm;

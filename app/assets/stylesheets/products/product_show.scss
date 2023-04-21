@@ -485,9 +485,6 @@
   }
 }
 
-
-// review edit
-
 #Review_Submit{
   width: 30%;
   text-align: center;
@@ -763,16 +760,20 @@ input[type=number]
   height: 50%;
 }
 
-// input[type="number"] {
-//   max-width: 30px;
-// }
+input[type="number"] {
+  max-width: 30px;
+}
 
-.rating-input {
+.star-rating {
   display: flex;
   margin-right: 4px;
-  height: 15px;
-  width: 15px;
+  height: 50px;
+  width: 50px;
   color: lightgrey;
+
+  div {
+    margin-right: 4px;
+  }
 
   &:hover {
     cursor: pointer;
@@ -785,7 +786,5 @@ input[type=number]
   .unselected {
     color: lightgrey
   }
-  
-
   
 }

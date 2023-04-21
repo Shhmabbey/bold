@@ -52,7 +52,6 @@ class EditReviewForm extends React.Component {
       </ul>
     )
   }
-  // ??test
 
   render() {
     const { formType, closeModal, product, deleteReview, review } = this.props;

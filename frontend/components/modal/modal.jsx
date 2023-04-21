@@ -3,7 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
-import ReviewFormContainer from '../product/product_show/reviews/review_form_container';
+import ReviewForm from '../product/product_show/reviews/review_form';
 import EditReviewFormContainer from '../product/product_show/reviews/edit_review_form_container';
 import { Sendoff } from '../sendoff/sendoff';
 
@@ -22,7 +22,7 @@ function Modal({modal, closeModal}) {
       component = <SignupFormContainer />;
       break;
     case 'Review':
-      component = <ReviewFormContainer />;
+      component = <ReviewForm />;
       break;
     case 'Edit Review':
       component = <EditReviewFormContainer />
