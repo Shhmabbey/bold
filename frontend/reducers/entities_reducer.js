@@ -7,7 +7,7 @@ import productsReducer from "./products_reducer";
 import reviewsReducer from "./reviews_reducer";
 import usersReducer from "./users_reducer";
 
-const entitiesReducer = combineReducers({
+const entitiesReducer = combineReducers({ // fetch 1 product type: RECIEVE_PRODUCT
   users: usersReducer,
   products: productsReducer,
   categories: categoryReducer,

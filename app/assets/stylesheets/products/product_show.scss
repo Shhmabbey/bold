@@ -772,5 +772,20 @@ input[type=number]
   margin-right: 4px;
   height: 15px;
   width: 15px;
-  color: black;
+  color: lightgrey;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .selected {
+    color: rgb(135, 134, 134);
+  }
+  
+  .unselected {
+    color: lightgrey
+  }
+  
+
+  
 }

@@ -1,11 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import ReviewRating from './review_ratings';
 
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      rating: "",
+      rating: '',
       title: '',
       body: '',
       reviewer_id: this.props.currentUser.id,
@@ -61,6 +62,7 @@ class ReviewForm extends React.Component {
     return `${mm}/${dd}/${yyyy}`;
   }
 
+
   render() {
     const { formType, closeModal, product } = this.props;
     const create = (formType === "Review");
@@ -98,11 +100,7 @@ class ReviewForm extends React.Component {
                     className="Review_Form_Input"
                   />
                 </div>
-                <div className="rating-input">
-                  <div className="filled" >
-                    <i className="fa fa-paw"></i>
-                  </div>
-                </div>
+                <ReviewRating/>
               {/* </div> */}
             </div>
           </div>
