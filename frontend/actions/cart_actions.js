@@ -5,12 +5,20 @@ export const RECEIVE_CART = "RECEIVE_CART";
 export const RECEIVE_CART_PRODUCTS = "RECEIVE_CART_PRODUCTS";
 export const RECEIVE_CART_PRODUCT = "RECEIVE_CART_PRODUCT";
 export const REMOVE_CART_PRODUCT = "REMOVE_CART_PRODUCT";
+export const REMOVE_CART_PRODUCTS = "REMOVE_CART_PRODUCTS";
 
 // cart
 export const receiveCart = (cart) => {
   return {
     type: RECEIVE_CART,
     cart
+  }
+}
+
+export const destroyCartProducts = (cartId) => {
+  return {
+    type: REMOVE_CART_PRODUCTS,
+    cartId
   }
 }
 
@@ -22,6 +30,11 @@ export const fetchCart = (userId, cartId) => dispatch => {
 export const createCart = (userId, cart) => dispatch => {
   return CartsUtil.createCart(userId, cart)
     .then(cart => dispatch(receiveCart(cart)))
+}
+
+export const deleteCartProducts = (userId, cartId) => dispatch => {
+  return CartsUtil.deleteCartProducts(userId, cartId)
+    .then(cartId => dispatch(destroyCartProducts(cartId)))
 }
 
 // cart products
