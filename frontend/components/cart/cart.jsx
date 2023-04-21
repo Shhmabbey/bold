@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCart } from '../../actions/cart_actions';
+import { fetchCart, deleteCartProducts } from '../../actions/cart_actions';
 import { CartProductCard } from "./cart_product_card";
 import { fetchAllProducts } from '../../actions/product_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
@@ -21,6 +21,12 @@ export const Cart = () => {
     dispatch(fetchCart(userId, cart.id));
     dispatch(fetchAllProducts());
   }, [dispatch])
+
+  const handleCheckout = () => {
+    dispatch(deleteCartProducts(userId, cart.id));
+    dispatch(openModal({ modal: 'Sendoff' }));
+  }
+
 
   let total = 0;
   let sum = 0;
@@ -56,7 +62,7 @@ export const Cart = () => {
       <div className="cart__right">
         <div className="checkout">
           <div className="checkout__contents">
-            <button className="checkout__contents__button" onClick={() => dispatch(openModal({ modal: 'Sendoff' }))} >Proceed to Checkout</button>
+            <button className="checkout__contents__button" onClick={handleCheckout} >Proceed to Checkout</button>
             <div className="checkout__contents__details">
               <div className="checkout__contents__details__line">
                 <div>Subtotal</div>
