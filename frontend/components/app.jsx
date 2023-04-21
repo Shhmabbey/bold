@@ -13,7 +13,7 @@ import SearchResults from "./search/search_results";
 
 const App = () => (
   <div>
-    <Modal />
+    <Route path='/' component={Modal} />
     <header>
       <Route path="/" component={HomepageContainer} />
     </header>

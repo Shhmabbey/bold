@@ -485,9 +485,6 @@
   }
 }
 
-
-// review edit
-
 #Review_Submit{
   width: 30%;
   text-align: center;
@@ -761,4 +758,33 @@ input[type=number]
   position: absolute;
   bottom: -1px;
   height: 50%;
+}
+
+input[type="number"] {
+  max-width: 30px;
+}
+
+.star-rating {
+  display: flex;
+  margin-right: 4px;
+  height: 50px;
+  width: 50px;
+  color: lightgrey;
+
+  div {
+    margin-right: 4px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .selected {
+    color: rgb(135, 134, 134);
+  }
+  
+  .unselected {
+    color: lightgrey
+  }
+  
 }
