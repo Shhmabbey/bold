@@ -7,6 +7,9 @@ import { openModal, closeModal } from '../../../actions/modal_actions';
 const ProductDetail = ({ product, reviews, cartId}) => {
   const dispatch = useDispatch();
 
+  const currentUserId = useSelector(state => state.session.id);
+  const currentUser = useSelector(state => state.entities.users[currentUserId]);
+
   let productId = product.id;
   let  cartProduct = {
     product_id: productId,
@@ -65,9 +68,13 @@ const ProductDetail = ({ product, reviews, cartId}) => {
       <div className="product_display_price">
         <h4>${product.price}0</h4>
       </div>
+      {  currentUser ? (
       <a href={`#/cart/`} >
         <button onClick={ addProduct }>Add to Cart</button>
-      </a>
+      </a> ) : (
+      <button onClick={ () => dispatch(openModal({modal: 'Login'})) }>Add to Cart</button>
+      )
+      }
     </div>
   );
 };
