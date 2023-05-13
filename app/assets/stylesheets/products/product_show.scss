@@ -12,35 +12,39 @@
 }
 
 .Product_Show_Grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr;
   grid-column-gap: 30px;
   grid-row-gap: 0px;
-  padding-left: 19%;
-  padding-right: 19%;
-  padding-top: 40px;
+  width: 60%;
+  display: flex;
+  margin: auto;
+  padding-top: 25px;
+  // background-color: rgb(249, 247,244);
 }
+
+.Product_Show_Main .Product_Show_Right{
+  width: 50%;
+}
+
+// .Product_Show_Wrapper {
+//   background-color: rgb(249, 247,244);
+// }
 
 .product_display {
   top: 35px;
   position: sticky;
+  background-color: rgb(255, 255, 255);
+  
 }
 
-// .Product_Show_Main {
-//   // background-color: aqua;
-
-// }
-
 .Outter_Photos_Container {
-  display: block;
+  box-sizing: border-box;
 
   .Inner_Photos_Container {
     display: block;
     display: flex;
     justify-content: center;
     position: relative;
-
+    box-sizing: border-box;
   }
 }
 
@@ -48,11 +52,14 @@
   display: flex;
   flex-direction: column;
   margin-right: 20px;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .Thumbnail {
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: 33.33%;
   border-radius: 7px;
   margin: 15px 0;
 
@@ -62,21 +69,23 @@
     height: 100%;
     object-fit: cover;
     border-radius: 7px;
-    // box-shadow: 0 0 5px rgb(0, 0, 0);
+    // box-shadow: 0 0 3px rgb(135, 134, 134);
   }
 }
 
-
-
 .Product_Photo {
-  width: 100%;
   position: relative;
   box-sizing: border-box;
   display: block;
   object-fit: contain;
-  width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 7px;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  // box-shadow: 0 0 5px rgb(135, 134, 134);
 }
 
 .Star {
@@ -126,27 +135,20 @@
 
 .Product_Photos_Separator {
   width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.Product_Photos {
+  width: 80%;
+}
 
 .Create_Review_Link {
   cursor: pointer;
-  // z-index: 20;
-  // color: white;
-  // background-color: palevioletred;
 }
-
-.Toggle_Left_Button .Toggle_Right_Button {
-  z-index: 5;
-
-  img {
-    height: 12px;
-    width: 12px;
-
-  }
-}
-
-
 
 // REVIEWS
 
@@ -165,8 +167,6 @@
   padding-right: 10px;
 
 }
-
-
 
 .Review_Img {
   height: 12px;
@@ -244,6 +244,7 @@
 
   p {
     padding-top: 10px;
+    line-height: normal;
   }
 }
 
@@ -676,19 +677,7 @@
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-// CREDIT To Artem @komarovdesign
+// CREDIT To Artem @komarovdesign for the quantity input
 // https://codepen.io/komarovdesign
 .quantity {
   position: relative;
@@ -786,5 +775,19 @@ input[type="number"] {
   .unselected {
     color: lightgrey
   }
-  
+}
+
+.Toggle_Right_Button {
+  position: absolute;
+  top: 47%;
+  right: 10px;
+  z-index: 2;
+  cursor: pointer;
+}
+.Toggle_Left_Button {
+  position: absolute;
+  top: 47%;
+  left: 10px;
+  z-index: 2;
+  cursor: pointer;
 }

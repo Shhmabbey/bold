@@ -1,7 +1,7 @@
 require 'open-uri'
 
 User.destroy_all
-ActiveRecord::Base.connection.reset_pk_sequence!('users') #this resets the id
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
 Category.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('categories')
 Product.destroy_all
@@ -18,11 +18,30 @@ ActiveRecord::Base.connection.reset_pk_sequence!('cart_products')
 demo = User.create!(first_name: 'Demo', last_name: 'User', email: 'demo@email.com', password: 'password')
 Cart.create!(user_id: demo.id)
 
-14.times do |i|
+users = [
+  ["Mike", "Wazowski"],
+  ["Sully", "Sullivan"],
+  ["Randall", "Boggs"],
+  ["Boo", "Boo"],
+  ["Celia", "Mae"],
+  ["Eddy", "Roz"],
+  ["George", "Sanderson"],
+  ["Henry", "J. Waternoose"],
+  ["Daniel", "Fungus"],
+  ["Fred", "Yeti"],
+  ["Needleman", "Michaelson"],
+  ["Smitty", "Bile"],
+  ["Thaddeus", "Phlegm"],
+  ["Jerry", "Slugworth"],
+  ["Ricky", "Plesuski"],
+]
+
+
+15.times do |i|
   user = User.create!(
-    first_name: "first_name",
-    last_name: "last_name",
-    email: i.to_s + "@email.com",
+    first_name: users[i][0],
+    last_name: users[i][1],
+    email: users[i][0] + "." + users[i][1] + "@email.com",
     password: "Password1234*"
   )
   Cart.create!(user_id: user.id)
@@ -187,16 +206,60 @@ womGlasses.photos.attach(io: file1, filename: 'w_sg_1.jpeg')
 womGlasses.photos.attach(io: file2, filename: 'w_sg_2.jpeg')
 womGlasses.photos.attach(io: file3, filename: 'w_sg_3.jpeg')
 
+review_content = [
+  ["Great Product!", "I absolutely love this product! It exceeded my expectations and has become an essential part of my daily routine.", "5"],
+  ["Not so good...", "I'm not impressed with this product. It didn't deliver the promised results and I found it to be overpriced for what it offers.", "2"],
+  ["Could be better", "This product is decent, but nothing extraordinary. It does the job, but there are better options available in the market.", "3"],
+  ["I love it!", "Wow, what a game-changer! This product has transformed my life. I can't imagine living without it now.", "5"],
+  ["Meh, honestly", "I had high hopes for this product, but unfortunately, it fell short. It didn't live up to the hype and left me disappointed.", "2"],
+  ["Amazing!", "This is hands down the best product I've ever used! It delivers exceptional results and is worth every penny.", "5"],
+  ["Not my favorite", "I wouldn't recommend this product. It caused irritation and didn't provide the desired outcome.", "2"],
+  ["Pretty Good!", "I'm pleasantly surprised by this product! It's affordable, effective, and has become a staple in my beauty routine.", "4"],
+  ["Average product", "This product is just average. It does what it claims, but I expected more based on the reviews I read.", "3"],
+  ["Incredible!!!", "I'm completely blown away by this product! It has exceeded all my expectations and I can't praise it enough.", "5"],
+  ["Not worth it", "I'm not impressed with this product. It didn't deliver the promised results and I found it to be overpriced for what it offers.", "2"],
+  ["It is what it is", "This product is decent, but nothing extraordinary. Better options available in the market.", "3"],
+  ["OKKKK I am in LOVE","The product exceeded my expectations. It is well-designed, durable, and performs flawlessly. Highly recommended!", "5"],
+  ["Are you kidding??", "I'm disappointed with the product. It arrived damaged, and the quality is subpar. Not worth the price.", "1"],
+  ["Where have you been all my life", "This is the best product I've ever bought. It's versatile, easy to use, and has improved my daily routine significantly.", "5"],
+  ["Just okay :/", "The product didn't meet my expectations. It lacks important features and feels cheaply made. I wouldn't purchase it again.", "2"],
+  ["Better than I expected", "I'm impressed with the product's performance. It's fast, efficient, and the results are outstanding. Well worth the investment.", "5"],
+  ["Not for me.", "I regret buying this product. It stopped working after a few uses, and the customer support was unhelpful. Stay away!", "2"],
+  ["Five stars!!", "I love this product! It's stylish, functional, and enhances my productivity. Definitely a game-changer.", "5"],
+  ["Satisfied customer here!", "The product arrived on time and in perfect condition. It's exactly as described and works like a charm.", "4"],
+  ["Not sure what other people see in this.", "I'm not satisfied with the product's quality. It feels flimsy and doesn't live up to its advertised features.", "2"],
+  ["As expected", "This product is a great value for the price. It performs exceptionally well and has become an essential part of my daily routine.", "5"],
+  ["Not for me", "The product didn't work as expected. It's unreliable and inconsistent. I wouldn't recommend it to others.", "2"],
+  ["Great gift", "I'm extremely happy with this purchase. The product is of high quality, and the customer service was excellent.", "5"],
+  ["Returning this ASAP", "The product is a disappointment. It broke within days of use, and the manufacturer didn't provide adequate support.", "1"],
+  ["YES! yes! yes!", "This product is a game-changer. It has simplified my life and surpassed all my expectations. I can't imagine living without it.", "5"],
+  ["Classic design", "The product's design is sleek and modern. It's a perfect blend of form and function. Highly recommended!", "5"],
+  ["Yikes.", "I'm not impressed with this product. It feels cheaply made, and the performance is lackluster.", "2"],
+  ["Stunning", "This product is a must-have. It's intuitive, efficient, and has made my daily tasks much easier.", "5"],
+  ["Not impressed.", "The product arrived late, and the packaging was damaged. Not a good first impression.", "2"],
+  ["So so", "I'm underwhelmed by the product's performance. It's not as effective as I had hoped and feels overpriced.", "3"],
+  ["I love it. WOW.", "I can't imagine my life without this product. It has become an indispensable tool that I rely on every day.", "5"],
+  ["Bleeh", "The product didn't live up to the hype. It's mediocre at best and doesn't offer any standout features.", "2"],
+  ["Bold!! I see you!", "I'm thoroughly impressed with this product. It's well-crafted, reliable, and delivers exceptional results.", "5"],
+  ["Still waiting", "The product arrived missing pieces, and the manufacturer has been unresponsive. Terrible customer service.", "1"],
+  ["Good!", "I'm satisfied with the product's performance. It does exactly what it claims and has improved my workflow.", "4"],
+  ["Not worth the money!", "This product is a letdown. It's poorly designed and doesn't work as advertised. Save your money.", "1"],
+  ["So useful!", "I'm amazed by the product's versatility. It has exceeded my expectations and opened up new possibilities.", "5"],
+  ["Expensive.", "The product is overpriced for its quality. It feels cheaply made, and I expected better durability.", "3"],
+  ["I use it daily!", "This product has transformed my routine. It's efficient, reliable, and has saved me a lot of time.", "5"],
+  ["Disappointing.", "I'm disappointed with this purchase. The product arrived damaged, and the customer support has been unhelpful.", "2"],
+  ["Satisfied!", "The product is a solid performer. It's reliable, user-friendly, and has become an essential part of my routine.", "4"]
+]
 
 rand(20..30).times do |i|
   product = Product.order("RANDOM()").first
-
+  current_review = review_content.sample()
   review = product.reviews.create!(
-    title: "Title Sample",
-    body: "Body Sample",
-    rating: "1",
+    title: current_review[0],
+    body: current_review[1],
+    rating: current_review[2],
     reviewer_id: User.order("RANDOM()").first.id,
     product_id: product.id,
-    helpful: "1"
+    helpful: rand(0..10)
   )
 end
