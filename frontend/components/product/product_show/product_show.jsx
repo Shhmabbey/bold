@@ -64,22 +64,24 @@ class ProductShow extends React.Component {
     const { openReviewModal, product, currentUser, deleteReview, cartId } = this.props;
 
     return (
-        // <div>{categories[product.category_id].title}</div>
-      <div className="Product_Show_Grid">
-        <div className="Product_Show_Main">
-          <ProductPhotoDisplay product={product}/>
-          <div className="Detail_Labels">
-            <h3 className="Tab">Details</h3>
-            <h3 className="Tab">Reviews</h3>
-            {/* <h3 className="Tab">Related</h3> */}
+      <div className="Product_Show_Wrapper">
+        {/* <div>{categories[product.category_id].title}</div> */}
+        <div className="Product_Show_Grid">
+          <div className="Product_Show_Main">
+            <ProductPhotoDisplay product={product}/>
+            <div className="Detail_Labels">
+              <h3 className="Tab">Details</h3>
+              <h3 className="Tab">Reviews</h3>
+              {/* <h3 className="Tab">Related</h3> */}
+            </div>
+            <div className="product_display_description">
+              <p>{product.description}</p>
+            </div>
+            {this.handleProductReviews(openReviewModal, reviews, product, currentUser, deleteReview) }
           </div>
-          <div className="product_display_description">
-            <p>{product.description}</p>
+          <div className="Product_Show_Right">
+            <ProductDetail product={product} reviews={reviews} cartId={cartId}/>
           </div>
-          {this.handleProductReviews(openReviewModal, reviews, product, currentUser, deleteReview) }
-        </div>
-        <div className="Product_Show_Right">
-          <ProductDetail product={product} reviews={reviews} cartId={cartId}/>
         </div>
       </div>
     );

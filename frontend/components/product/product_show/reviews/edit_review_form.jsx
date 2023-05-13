@@ -69,7 +69,6 @@ class EditReviewForm extends React.Component {
           </div>
           <div className="Review_Form_Body">
             <div className="Review_Form_Image">
-              {/* image */}
               <img src={product.photoUrls[0]} />
             </div>
             <div className="Review_Form_Body_Right">

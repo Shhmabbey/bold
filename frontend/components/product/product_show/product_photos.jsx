@@ -23,13 +23,13 @@ const ProductPhotoDisplay = ( product ) => {
           </div>
           <div className="Product_Photos">
             <div className="Product_Photos_Separator">
-              {/* <div className="Toggle_Left_Button" onClick={() => setIndex(index - 1)}>
-                <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-left-arrows-those-icons-lineal-those-icons-3.png" />
-              </div> */}
+              <div className="Toggle_Left_Button" onClick={() => index > 0 ? setIndex( index - 1) : setIndex(index + 3 - 1)}>
+                <i className="fa fa-solid fa-angle-left fa-3x" ></i>
+              </div>
               <img className="Product_Photo" src={photos[index]} alt={product.product.title} />
-              {/* <div className="Toggle_Right_Button" onClick={() => setIndex(index + 1) }>
-                <img src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-right-arrows-those-icons-lineal-those-icons-5.png" />
-              </div> */}
+              <div className="Toggle_Right_Button" onClick={() => setIndex((index + 1) % (photos.length)) }>
+                <i className="fa fa-solid fa-angle-right fa-3x" ></i>
+              </div>
             </div>
           </div>
         </div>

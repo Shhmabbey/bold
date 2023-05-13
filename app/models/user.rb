@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   attr_reader :password
 
   validates :email, :password_digest, :session_token, :first_name, :last_name, presence: true
@@ -7,6 +6,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   has_one :cart
+  has_many :reviews,
+  foreign_key: :reviewer_id
 
   after_initialize :ensure_session_token
 
@@ -29,6 +30,27 @@ class User < ApplicationRecord
     generate_unique_session_token
     save!
     self.session_token
+  end
+
+  def first_name_presence
+    if !self.first_name.present? || !self.last_name.present?
+      # errors.add(:name, "can't be blank")
+      errors[:name] = ["can't be blank"]
+    end
+  end
+
+  def is_valid_email
+    if !self.email.present?
+      # errors.add(:email, "can't be blank")
+      errors[:email] = ["can't be blank"]
+    end
+
+    if self.email.include?('@') && self.email.include?('.')
+      return true
+    else
+      # errors.add(:email, "is not a valid email address")
+      errors[:email] = "is not a valid email address"
+    end
   end
 
   private

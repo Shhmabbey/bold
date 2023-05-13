@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { FontAwesomeIcon } from '../../../node_modules/@fortawesome/react-fontawesome'
-// import { faEnvelope } from '../../../node_modules/@fortawesome/free-solid-svg-icons'
 
 class SessionForm extends React.Component {
   constructor(props) {

@@ -12,7 +12,7 @@ import UhOh from "./homepage/under_development";
 import SearchResults from "./search/search_results";
 
 const App = () => (
-  <div>
+  <>
     <Route path='/' component={Modal} />
     <header>
       <Route path="/" component={HomepageContainer} />
@@ -26,7 +26,7 @@ const App = () => (
       <Route exact path="/development/" component={UhOh} />
       <Redirect to='/' />
     </Switch>
-  </div>
+  </>
 );
 
 export default App;
