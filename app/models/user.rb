@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   has_one :cart
   has_many :reviews,
-  foreign_key: :reviewer_id
+  foreign_key: :reviewer_id,
+  class_name: :Review
 
   after_initialize :ensure_session_token
 
